@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div><h2>Tiền lương sau thuế</h2></div>
+    <div>
+        <label>Lương nhân viên: <input type="text" id="wage"></label>
+        <label><button onclick="result()">Result</button></label>
+    </div>
+    <div>
+        <label>Thuế thu nhập cá nhân:</label>
+        <span id = "tax"></span>
+    </div>
+    <div>
+        <label>Lương ròng:</label>
+        <span id = "result"></span>
+    </div>
+</div>
+<script>
+    function result(){
+        let wage = document.getElementById("wage").value;
+        let tax = 0;
+        let result = 0;
+        if(wage >= 15000000){
+            tax = wage * 0.15
+            document.getElementById("tax").innerHTML = tax;
+            result = wage - tax;
+            document.getElementById("result").innerHTML = result;
+        }else if(wage >=  7000000 && wage < 15000000){
+            tax = wage * 0.1
+            document.getElementById("tax").innerHTML = tax;
+            result = wage - tax;
+            document.getElementById("result").innerHTML = result;
+        } else {
+            tax = wage * 0.05
+            document.getElementById("tax").innerHTML = tax;
+            result = wage - tax;
+            document.getElementById("result").innerHTML = result;
+        }
+    }
+</script>
+</body>
+</html>

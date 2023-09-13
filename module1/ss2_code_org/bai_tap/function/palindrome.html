@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function isPalindrome(s, left, right){
+    if (left >= right) {
+      document.write("it's palindrome");
+      return true;
+    }
+
+    if (s[left] === s[right]) {
+      isPalindrome(s, left + 1, right - 1);
+    } else if (s[left] !== s[right]) {
+      document.write("it's not palindrome");
+      return false;
+    }
+  }
+  let str = prompt("Enter a word");
+  isPalindrome(str, 0, str.length - 1);
+</script>
+</body>
+</html>

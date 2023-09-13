@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let num = parseInt(prompt("Enter a length of arrayL"));
+  let arr= [];
+  let i;
+  let max = 0, sum = 0, average;
+
+  for (i=0; i < num; i++) {
+    arr[i] = Math.floor((Math.random()*100) + 1);
+  }
+  for (i=0; i < arr.length; i++) {
+    sum += arr[i];
+    if(arr[i]> max) {
+      max = arr[i];
+    }
+  }
+  average = sum/(arr.length);
+  document.write(arr);
+  document.write("<br/>");
+  document.write("Max = " + max);
+  document.write("<br/>");
+  document.write("Average = " + average);
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+  let Rectangle = function (width, height) {
+    this.width = width;
+    this.height = height;
+    this.getArea = function () {
+      return width * height;
+    }
+    this.getPerimeter = function () {
+      return (width + height) * 2;
+    }
+  };
+
+  function getRandomHex(){
+    return Math.floor(Math.random()*255);
+  }
+
+  function getRandomColor(){
+    let red = getRandomHex();
+    let green = getRandomHex();
+    let blue = getRandomHex();
+    return "rgb(" + red + "," + blue + "," + green +")";
+  }
+
+  function createRectangle(){
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let width = parseInt(prompt("Enter width: "));
+    let height = parseInt(prompt("Enter height: "));
+    let rectangle = new Rectangle(width, height);
+    let color = getRandomColor();
+    ctx.fillRect(100, 100, width, height);
+    ctx.fillStyle = color;
+    ctx.fill();
+    let area = rectangle.getArea();
+    let peri = rectangle.getPerimeter();
+    document.write("Area: " + area + "; " + "perimeter: " + peri);
+  }
+
+  createRectangle();
+</script>
+</body>
+</html>

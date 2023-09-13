@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkNumber(number){
+        if(number<=1) return false;
+        for(let i = 2; i<=Math.sqrt(number); i++){
+            if(number%i===0) return false;
+        }
+        return true;
+    }
+    function soNguyenTo(arr){
+        let b = [];
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j< arr[i].length; j++){
+                if(checkNumber(arr[i][j])) {
+                    b.push(arr[i][j]);
+                }
+            }
+        }
+        return b;
+    }
+
+  let m = parseInt(prompt("Enter the length of the parent array: "));
+  let n = parseInt(prompt("Enter the length of the subarray: "));
+  let arr = Array(m);
+  for(let i = 0; i < arr.length; i++){
+    arr[i] =  Array(n);
+  }
+  for(let i = 0; i < arr.length; i++){
+    let k = n*i+1;
+    for(let j = 0; j< arr[i].length; j++){
+      arr[i][j] = k;
+      k++;
+    }
+  }
+  let newArr = soNguyenTo(arr);
+  console.log(newArr);
+  console.log(newArr.length);
+</script>
+</body>
+</html>

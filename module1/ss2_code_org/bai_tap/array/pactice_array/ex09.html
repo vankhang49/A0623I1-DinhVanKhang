@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = prompt("Enter number of array A, the elements of the array are separated by ', '");
+    let num2 = prompt("Enter number of array B, the elements of the array are separated by ', '");
+    let arrA = num1.split(", ");
+    let arrB = num2.split(", ");
+    let arrC = arrA.concat(arrB);
+    document.write(arrC);
+    arrC.sort(function (a, b){
+        return a - b;
+    })
+    document.write("<br/>");
+    document.write(arrC);
+</script>
+</body>
+</html>

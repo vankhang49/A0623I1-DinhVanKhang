@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart</title>
+</head>
+<body>
+<script>
+  for(let i = 1; i < 7; i++) {
+    for (let j = 1; j <=7; j++) {
+      if(!((i===1 && (j ===1 || j === 4 || j === 7))
+      || (i === 4 && (j ===1 ||j === 7))
+      ||(i === 5 && (j <= 2 || j >= 6))
+      ||(i === 6 && (j <= 3 || j >= 5)))) {
+        document.write("*");
+      } else {
+        document.write("&nbsp&nbsp;");
+      }
+    }
+    document.write("<br/>");
+  }
+</script>
+</body>
+</html>

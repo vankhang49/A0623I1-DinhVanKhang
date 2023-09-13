@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+      function factorial(nums) {
+          if(nums === 0) {
+              return 1;
+          }
+          return nums * factorial(nums-1);
+      }
+
+      let nums = parseInt(prompt("Hãy nhập một số nguyên dương mà bạn muốn tính giai thừa!"));
+      if (nums < 0) {
+        alert("Hãy nhập số nguyên dương!");
+      } else {
+        document.write(factorial(nums));
+      }
+</script>
+</body>
+</html>

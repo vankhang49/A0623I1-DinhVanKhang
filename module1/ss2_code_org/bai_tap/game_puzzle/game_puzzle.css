@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 940px;
+    margin-top: 1em;
+    margin: auto;
+}
+
+img {
+    display: block;
+    margin: 1em;
+    padding: 0.2em;
+    box-shadow: 2px 3px 3px black;
+    width: 600px;
+    height: 150px;
+}

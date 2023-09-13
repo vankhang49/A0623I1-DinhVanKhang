@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CaroSimple</title>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame"></p>
+    <input type="button" value="X" onclick="changeValueX()"/>
+    <input type="button" value="O" onclick="changeValueO()"/>
+    <script>
+        let b = document.getElementById("carogame");
+        let board = [];
+        let data = "";
+        for (let i = 0; i < 5; i++) {
+            board[i] = [".", ".", ".", ".", "."];
+        }
+        for(let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + " ";
+            }
+        }
+
+        b.innerHTML = "<hr/>" + data;
+        
+
+        function changeValueX() {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "X";
+            for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += board[i][j] + "     ";
+                }
+            }
+
+            b.innerHTML = "<hr/>" + data;
+
+        }
+
+        function changeValueO() {
+            let positionX = prompt("X: ");
+            let positionY = prompt("Y: ");
+            data = "";
+            board[positionX][positionY] = "O";
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += board[i][j] + "     ";
+                }
+            }
+
+            b.innerHTML = "<hr/>" + data;
+
+        }
+    </script>
+</body>
+</html>

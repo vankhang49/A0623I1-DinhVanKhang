@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let draw = '';
+  for ( let i = 1; i <= 5; i++) {
+      for (let j = 1; j <= i; j++) {
+          if(i>1 && i<5 && j>1 && j<i){
+              draw += "&nbsp&nbsp;"
+          } else {
+              draw +="*";
+          }
+      }
+      draw+= "<br/>";
+  }
+  document.write(draw);
+</script>
+</body>
+</html>

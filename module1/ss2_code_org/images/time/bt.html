@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [-2, 3, 5, -9, 14, 10, 30];
+    let size = arr.length;
+    for(let i = 0; i < size; i++){
+        for(let j = 0; j < size - i - 1; j++) {
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

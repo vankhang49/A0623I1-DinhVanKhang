@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let numbers = prompt("Nhập số nguyên dương n: ", '');
+    let N = 2;
+    let count = 0;
+    for (let loop = 0; count < numbers; loop++) {
+        let mark = 1;
+        for(let i = 2; i <= Math.sqrt(N); i++) {
+            if (N % i === 0) {
+                mark = 0;
+            }
+        }
+
+        if (mark === 1) {
+            count++;
+            document.write(N + ", ");
+        }
+
+        N++;
+    }
+
+</script>
+</body>
+</html>

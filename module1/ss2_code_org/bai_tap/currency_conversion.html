@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency conversion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .table {
+            border: thin solid black;
+            padding: 20px 50px 50px 20px;
+            background-color: antiquewhite;
+        }
+
+        .head {
+            color: green;
+            height: 50px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        #button {
+            background-color: mediumpurple;
+            color: white;
+            font-size: medium;
+            width: 70px;
+            height: 30px;
+            border-radius: 10%;
+        }
+
+        .result {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="table">
+        <tr class="head">
+            <th colspan="4" style="padding-bottom: 30px"><h2>Currency conversion</h2></th>
+        </tr>
+        <tr class="title">
+            <td style="padding-left: 40px">Amount</td>
+            <td style="padding-left: 5px">From Currency</td>
+            <td style="padding-left: 5px">To Currency</td>
+            <td></td>
+        </tr>
+        <tr class="input">
+            <td><label><input type="text" id="amount" style="width: 130px; margin-right: 60px"></label></td>
+            <td><label>
+                <select id="from_currency" style="margin-right: 60px">
+                    <option value="VND">VietNam</option>
+                    <option value="₩">Won</option>
+                    <option value="¥">Yên Nhật</option>
+                    <option value="€">Euro</option>
+                    <option value="USD">USD</option>
+                </select>
+            </label></td>
+            <td><label>
+                <select id="to_currency" style="margin-right: 35px">
+                    <option value="$">USD</option>
+                    <option value="€">Euro</option>
+                    <option value="¥">Yên Nhật</option>
+                    <option value="₩">Won</option>
+                    <option value="VND">VietNam</option>
+                </select>
+            </label></td>
+            <td><button id="button" onclick="convert()">Convert</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><label class="result"><span id="result">3333</span></label></td>
+        </tr>
+    </table>
+<script>
+    function convert() {
+        let amount = document.getElementById("amount").value;
+        let from_currency = document.getElementById("from_currency").value;
+        let to_currency = document.getElementById("to_currency").value;
+        let result;
+        if(from_currency === "VND") {
+            if (to_currency === "$") {
+                result = amount / 23643;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if(to_currency === "€") {
+                result = amount / 26548;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "¥") {
+                result = amount / 170;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "₩") {
+                result = amount / 19;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else {
+                result = amount;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }
+
+        } else if(from_currency === "₩") {
+            if (to_currency === "$") {
+                result = amount / 1269;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if(to_currency === "€") {
+                result = amount / 1425;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }else if (to_currency === "¥") {
+                result = amount / 9;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "₩") {
+                result = amount;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else {
+                result = amount * 19;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }
+        } else if(from_currency === "¥") {
+            if (to_currency === "$") {
+                result = amount / 139;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if(to_currency === "€") {
+                result = amount / 156;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "¥") {
+                result = amount;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "₩") {
+                result = amount * 9;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else {
+                result = amount * 170;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }
+        } else if (from_currency === "€") {
+            if (to_currency === "$") {
+                result = amount * 1.12;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if(to_currency === "€") {
+                result = amount;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "¥") {
+                result = amount * 156;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "₩") {
+                result = amount * 1425;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else {
+                result = amount * 26548;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }
+        } else {
+            if (to_currency === "$") {
+                result = amount;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if(to_currency === "€") {
+                result = amount / 1.12;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "¥") {
+                result = amount * 139;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else if (to_currency === "₩") {
+                result = amount * 1269;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            } else {
+                result = amount * 23643;
+                document.getElementById("result").innerHTML = "Resutl: " +result + " " + to_currency;
+            }
+        }
+    }
+</script>
+</body>
+</html>

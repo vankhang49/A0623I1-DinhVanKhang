@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum and Average</title>
+</head>
+<body>
+    <p>Điểm lý: <input type="text" id="physical"/></p>
+    <p>Điểm Hoá: <input type="text" id="chemistry"/></p>
+    <p>Điểm sinh: <input type="text" id="biology"/></p>
+    <p>
+        <button onclick="sums()">Sum</button>
+        <button onclick="average()">Average</button>
+    </p>
+<script>
+    function sums() {
+        let sum =  Number.parseInt(physical.value) + Number.parseInt(chemistry.value) + Number.parseInt(biology.value);
+        alert("Tổng điểm là: " + sum);
+    }
+
+    function average() {
+        let aver = (Number.parseInt(physical.value) + Number.parseInt(chemistry.value) + Number.parseInt(biology.value)) / 3;
+        alert("Điểm trung bình là: " + aver);
+        console.log(aver);
+    }
+</script>
+</body>
+</html>

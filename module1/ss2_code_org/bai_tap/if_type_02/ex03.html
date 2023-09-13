@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3>Circles Calculator</h3>
+    <label>
+        Cạnh: <input type="text" id="width">
+        <button onclick="showArea ()">Area</button>
+    </label>
+</div>
+<script type="text/javascript">
+    function showArea ()   {
+        let width = document.getElementById("width").value;
+        let area = width * width;
+        alert("Dien tich Hình vuông có cạnh bằng " + width + " là " + area);
+    }
+</script>
+</body>
+</html>

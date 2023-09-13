@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr= [];
+  let i;
+  let max=0;
+  let position;
+
+  for (i=0; i < 10; i++) {
+    arr[i] = Math.floor((Math.random()*100) + 1);
+  }
+  for (i=0; i < 10; i++) {
+    if(arr[i]> max) {
+      max = arr[i];
+      position = arr.indexOf(arr[i]);
+    }
+  }
+  document.write(arr);
+  document.write("<br/>");
+  document.write("Max = " + max);
+  document.write("<br/>");
+  document.write("Vị trí của max trong mảng là " + position);
+</script>
+</body>
+</html>

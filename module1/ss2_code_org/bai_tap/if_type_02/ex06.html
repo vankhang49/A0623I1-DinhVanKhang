@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First degree equation</title>
+</head>
+<body>
+<script>
+    alert("Phương trình bậc nhất có dạng: ax + b = c")
+    let a = parseInt(prompt("Enter number a: "));
+    let b = parseInt(prompt("Enter number b: "));
+    let c = parseInt(prompt("Enter number c: "));
+    let x;
+
+    if (a === 0) {
+        if (b === 0) {
+            alert("Phương trình " + a + "x + " + b + " = " + c+ " có vô số nghiệm");
+        } else {
+            alert("Phương trình " + a + "x + " + b + " = " + c+ " vô nghiệm");
+        }
+    } else {
+        x = (c-b)/a;
+        alert("Phương trình " + a + "x + " + b + " = " + c+ " có nghiệm duy nhất x = " + x);
+    }
+</script>
+</body>
+</html>

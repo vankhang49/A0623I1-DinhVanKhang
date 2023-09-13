@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <title>Translate</title>
+    <h2>JS-Translate</h2>
+    <label><input type="text" id="Enlish" /></label>
+    <button onclick="search()">search</button>
+    <label><input type="text" id="Vietnamese" /></label>
+<script type="text/javascript">
+    function search() {
+        let enlish = document.getElementById("Enlish").value;
+        console.log(enlish);
+        let enlishlib = ['software', 'hardware', 'input', 'output', 'program', 'text', 'graphics'];
+        let vietnameselib = ['Phần mềm', 'Phần cứng', 'Đầu vào', 'Đầu ra', 'Chương trình', 'Văn bản', 'Đồ hoạ'];
+        const index = enlishlib.indexOf(enlish);
+        if (index > -1) {
+            document.getElementById("Vietnamese").value = vietnameselib[index];
+        } else {
+            alert("Không tìm thấy");
+        }
+    }
+</script>
+</body>
+</html>

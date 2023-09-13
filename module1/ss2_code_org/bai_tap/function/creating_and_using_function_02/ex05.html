@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function findMin(a, b, c) {
+    let min = a;
+    if (b < min) {
+      min = b;
+    }
+    if (c < min) {
+        min = c;
+    }
+    return min;
+  }
+
+  let a = parseInt(prompt("Enter number A: "));
+  let b = parseInt(prompt("Enter number B: "));
+  let c = parseInt(prompt("Enter number C: "));
+  document.write("Min is " + findMin(a, b, c));
+
+</script>
+</body>
+</html>

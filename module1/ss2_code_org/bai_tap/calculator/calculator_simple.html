@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator simple</title>
+</head>
+<body>
+    <form action="calculator_simple.html" onsubmit="return false">
+        <div class="display">
+            <label><input type="text" id="operand1"/></label>
+            <label><input type="text" id="operand2"/></label>
+        </div>
+        <div class="operator">
+            <label><button onclick="addition()">Addition(+)</button></label>
+            <label><button onclick="subtraction()">Subtraction(-)</button></label>
+            <label><button onclick="multiplication()">Multiplication(*)</button></label>
+            <label><button onclick="division()">Division(/)</button></label>
+        </div>
+        <div class="result">
+            <label><span id="result"></span></label>
+        </div>
+    </form>
+<script>
+    let result;
+    function addition() {
+        let operand1 = Number.parseInt(document.getElementById("operand1").value);
+        let operand2 = Number.parseInt(document.getElementById("operand2").value);
+        result = operand1 + operand2;
+        document.getElementById("result").innerHTML= result;
+    }
+    function subtraction() {
+        let operand1 = Number.parseInt(document.getElementById("operand1").value);
+        let operand2 = Number.parseInt(document.getElementById("operand2").value);
+        result = operand1 - operand2;
+        document.getElementById("result").innerHTML= result;
+    }
+    function multiplication() {
+        let operand1 = Number.parseInt(document.getElementById("operand1").value);
+        let operand2 = Number.parseInt(document.getElementById("operand2").value);
+        result = operand1 * operand2;
+        document.getElementById("result").innerHTML= result;
+    }
+    function division() {
+        let operand1 = Number.parseInt(document.getElementById("operand1").value);
+        let operand2 = Number.parseInt(document.getElementById("operand2").value);
+        result = operand1 / operand2;
+        document.getElementById("result").innerHTML= result;
+    }
+</script>
+</body>
+</html>

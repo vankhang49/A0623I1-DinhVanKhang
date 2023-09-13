@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas { border: 2px solid red}
+    </style>
+</head>
+<body>
+    <h1>Result : </h1>
+    <canvas id="canvas" width="1000" height="400"></canvas>
+<script>
+    let right = false;
+    let left = false;
+    let paddleXValue = 0;
+    let running = true;
+
+    function onKeyDown(e) {
+        if(e.keyCode === 39 ) right = true;
+        if(e.keyCode === 37) left = true;
+    }
+
+    function onKeyUp(e) {
+        if(e.keyCode === 39 ) right = false;
+        if(e.keyCode === 37) left = false;
+    }
+
+    document.addEventListener("keydown", onKeyDown, false);
+    document.addEventListener("keyup", onKeyUp, false);
+
+    let canvas = document.getElementById('canvas');
+    let context = canvas.getContext('2d');
+
+    function Ball(x, y, dx, dy, radius, color) {
+        if(x === undefined) { x = 50 }
+        if(y === undefined) { y = 50 }
+        if(dx === undefined) { dx = 2 }
+        if(dy === undefined) { dy = 3 }
+        if(radius === undefined) { radius = 10 }
+        if(color === undefined) { color = 'green' }
+        this.radius = radius; this.color = color; this.x = x; this.y = y; this.dx = dx; this.dy = dy;
+        this.draw = function() {
+            context.save();
+            context.beginPath();
+            context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, true);
+            context.closePath();
+
+            this.y += this.dy;
+            this.x += this.dx;
+
+            if(this.x >= canvas.width - this.radius) { this.x = canvas.width - this.radius; this.dx = -this.dx; }
+            else if(this.x < 0 + this.radius) { this.x = 0 + this.radius; this.dx = -this.dx; }
+
+            if(this.y + this.dy - this.radius < 0) {
+                this.dy = -this.dy;
+            } else if(this.y  + this.dy + this.radius > canvas.height - 10) {
+                if(this.x > paddleXValue && this.x < paddleXValue + 100) {
+                    this.dx = 2 * ((this.x - ((paddleXValue + 100) / 2))/100)
+                    this.dy = -this.dy;
+                } else if (this.y + this.dy + this.radius > canvas.height) {
+                    running = false;
+                }
+            }
+
+            context.fillStyle = this.color; context.fill(); context.restore();
+        }
+    }
+
+    function Paddle() {
+        this.paddleWidth = 100;
+        this.draw = function(x) {
+            context.save();
+            context.fillRect(paddleXValue, 385, this.paddleWidth, 15);
+            context.restore();
+        }
+        this.paddleMove = function() {
+            if(right) {
+                paddleXValue += 10
+                if(paddleXValue + this.paddleWidth > canvas.width) { paddleXValue = canvas.width - this.paddleWidth }
+            }
+            else if(left) {
+                paddleXValue -= 10
+                if(paddleXValue < 0) { paddleXValue = 0 }
+            }
+        }
+    }
+
+    let ball = new Ball(100,120,3,2,10,'green');
+    let paddle = new Paddle();
+
+    function animateFunction() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        ball.draw();
+        paddle.paddleMove();
+        paddle.draw(paddleXValue);
+        if(running) {
+            requestAnimationFrame(animateFunction);
+        }
+    }
+
+    requestAnimationFrame(animateFunction);
+</script>
+</body>
+</html>

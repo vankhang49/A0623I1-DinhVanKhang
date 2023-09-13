@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switches and light bulbs</title>
+</head>
+<body>
+<script>
+  function SwitchButton(status, lamp){
+    this.status = status;
+    this.lamp = lamp;
+    this.connectToLamp = function (lamp){
+      return this.lamp = lamp;
+    }
+    this.switchOff = function (){
+      if(this.status){
+        this.status = false;
+        this.lamp.turnOff();
+        alert("Đèn tắt");
+      }
+    }
+    this.switchOn = function (){
+      if(!this.status){
+        this.status = true;
+        this.lamp.turnOn();
+        alert("Đèn sáng");
+      }
+    }
+  }
+
+  function ElectricLamp(status) {
+    this.status = status;
+    this.turnOff = function (){
+      if(this.status){
+        this.status = false;
+      }
+    }
+    this.turnOn = function (){
+      if(!this.status){
+        this.status = true;
+      }
+    }
+  }
+
+  let lamp = new ElectricLamp();
+  let switchButton = new SwitchButton();
+  switchButton.connectToLamp(lamp);
+  for (let i = 0; i < 10; i++){
+    switchButton.switchOn();
+    switchButton.switchOff();
+  }
+</script>
+</body>
+</html>

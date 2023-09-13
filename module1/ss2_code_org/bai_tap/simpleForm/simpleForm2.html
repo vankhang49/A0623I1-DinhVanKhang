@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .table {
+            border: solid thin;
+        }
+        .title {
+            background-color: lightblue;
+            width: 100%;
+            justify-content: flex-start;
+            text-align: left;
+            align-items: center;
+            color: blue;
+
+        }
+
+    </style>
+</head>
+<body>
+    <form action="simpleForm2.html" class="form"></form>
+        <table class="table" style="background-color: #ffff99">
+            <tr class="title">
+                <th colspan="2"><h2>ĐĂNG KÝ HỌC VIÊN</h2></th>
+            </tr>
+            <tr>
+                <td style="width: 110px">Họ và tên</td>
+                <td>
+                    <label><input type="text" name="fullname" style="margin-right: 100px; width: 180px"/></label>
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td>
+                    <label><input type="text" name="born" style="width: 110px"/></label>
+                </td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>
+                    <label><input type="radio" name="gener"/> Nam</label>
+                    <label><input type="radio" name="gener"/> Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td>
+                    <label><input type="text" name="address" style="width: 150px; height: 50px"/></label>
+                </td>
+            </tr>
+            <tr>
+                <td>Lớp</td>
+                <td>
+                    <label>
+                        <select name="class">
+                            <option value="codegyme">-Chọn lớp-</option>
+                            <option value="codegyme1">A0623I1</option>
+                            <option value="codegym2">A0623I2</option>
+                            <option value="codgym3">A0623I3</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <label><input type="text" name="email" style="width: 125px"/></label>
+                </td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td>
+                    <label><input type="text" name="phone" style="width: 125px"/></label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="smform" value="Đăng ký"/>
+                    <input type="reset" value="Nhập lại"/>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

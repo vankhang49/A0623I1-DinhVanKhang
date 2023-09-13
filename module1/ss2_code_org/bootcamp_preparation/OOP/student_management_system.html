@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .form{
+      position: relative;
+    }
+    .head {
+      text-align: center;
+    }
+    .bodyform {
+      text-align: center;
+    }
+    .button{
+      border-radius: 5%;
+      height: 40px;
+      font-weight: bold;
+    }
+    .img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+    }
+    #display{
+      text-align: center;
+    }
+    .table {
+      width: 100%;
+      text-align: center;
+      border: thin solid black;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    th {
+      background-color: #dddddd;
+      border: thin solid black;
+    }
+    td {
+      border: thin solid black;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="form">
+  <div class="head">
+    <h1>Hệ thống quản lý học viên CodeGym</h1>
+  </div>
+  <div>
+    <img src="./Logo-CodeGym-W-05.png" class="img">
+  </div>
+  <div class="bodyform">
+    <button onclick="newStudent()" class="button">Thêm mới học viên</button>
+    <button onclick="editStudent()" class="button">Sửa thông tin học viên</button>
+    <button onclick="deleteStudent()" class="button">Xoá học viên</button>
+  </div>
+  <div id = "display">
+    <h3>Hiển thị danh sách học viên</h3>
+  </div>
+  <div id = "result"></div>
+</div>
+<script>
+  let list = [Khang = {code: "04092000"
+    , fullname: "Đinh Văn Khang"
+    , grade: "A0623I1"
+    , email: "dvkhang49@gmail.com"
+    , born : "04/09/2000"
+    , module: 1 },
+  Dai = {code: "03042000"
+    , fullname: "Trần Văn Đại"
+    , grade: "A0623I1"
+    , email: "dai34@gmail.com"
+    , born : "03/04/2000"
+    , module: 1}];
+  let fdisplay = document.getElementById("display");
+  fdisplay.addEventListener("click", display);
+  function display() {
+    let table = "<table class='table'>";
+    table += "<tr>" + "<th>"+ "STT" +"</th>"
+            + "<th>"+ "Mã học viên" +"</th>"
+            + "<th>"+ "Họ và tên" +"</th>"
+            + "<th>"+ "Lớp" +"</th>"
+            + "<th>"+ "Email" +"</th>"
+            + "<th>"+ "Ngày tháng năm sinh" +"</th>"
+            + "<th>"+ "Module" +"</th>" + "</tr>";
+    for (let i = 0; i < list.length; i++) {
+      table += "<tr>" + "<td>" + i + "</td>"
+              + "<td>" + list[i].code + "</td>"
+              + "<td>"+list[i].fullname + "</td>"
+              +  "<td>"+list[i].grade + "</td> "
+              + "<td>"+list[i].email + "</td> "
+              + "<td>"+list[i].born + "</td> "
+              + "<td>"+list[i].module + "</td> " + "</tr>";
+    }
+    table += "<table/>";
+    document.getElementById("result").innerHTML = table;
+  }
+  function Student(code, fullname, grade, email, born, module){
+    this.code = code;
+    this.fullname = fullname;
+    this.grade = grade;
+    this.email = email;
+    this.born = born;
+    this.module = module;
+  }
+  function newStudent(){
+    let newSt = confirm("Thêm học viên: ");
+    if (newSt === false){
+
+    } else {
+      let code = prompt("Nhập mã học viên");
+      let fullname = prompt("Nhập họ và tên học viên");
+      let grade = prompt("Nhập mã lớp");
+      let email = prompt("Nhập email");
+      let born = prompt("nhập ngày tháng năm sinh");
+      let module = prompt("Nhập module đang học");
+      let student = new Student(code, fullname, grade, email, born, module);
+      list.push(student);
+    }
+  }
+  function editStudent(){
+    let name = prompt("Nhập mã học viên của học viên mà bạn muốn sửa");
+    for(let i = 0; i < list.length; i++){
+      if(name === list[i].code){
+        let request = prompt("Nhập phần mà bạn muốn sửa");
+        switch (request){
+          case "mã học viên":
+          case "Mã học viên":
+            list[i].code = prompt("Nhập lại mã học viên");
+            break;
+          case "họ và tên":
+          case "Họ và tên":
+            list[i].fullname = prompt("Nhập lại họ và tên học viên");
+            break;
+          case "mã lớp":
+          case "Mã lớp":
+            list[i].grade = prompt("Nhập lại mã lớp học");
+            break;
+          case "email":
+          case "Email":
+            list[i].email = prompt("Nhập lại email");
+            break;
+          case "ngày tháng năm sinh":
+          case "Ngày tháng năm sinh":
+            list[i].born = prompt("Nhập lại ngày tháng năm sinh");
+            break;
+          case "module":
+          case "Module":
+            list[i].module = prompt("Nhập lại module");
+            break;
+        }
+      } else {
+        alert("Mã học viên không tồn tại");
+      }
+    }
+  }
+  function deleteStudent(){
+    let remove = prompt("Nhập mã học viên của học viên mà bạn muốn xoá");
+    for(let i = 0; i < list.length; i++){
+      if(list[i].fullname === remove){
+        list.splice(i,1);
+      } else {
+        alert("Mã học viên không tồn tại");
+      }
+    }
+  }
+</script>
+</body>
+</html>

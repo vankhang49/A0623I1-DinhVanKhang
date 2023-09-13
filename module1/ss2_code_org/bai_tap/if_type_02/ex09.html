@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Triangle</title>
+</head>
+<body>
+<script>
+  let a = parseInt(prompt("Enter number a: "));
+  let b = parseInt(prompt("Enter number b: "));
+  let c = parseInt(prompt("Enter number c: "));
+
+  if(a > 0 && b > 0 && c > 0 && a + b > c && a + c >b && b + c > a) {
+      alert("Ba cạnh " + a + ", " + b + ", " + c + " là cạnh của một tam giác");
+  } else {
+    alert("Ba cạnh " + a + ", " + b + ", " + c + " không là cạnh của một tam giác");
+  }
+</script>
+</body>
+</html>

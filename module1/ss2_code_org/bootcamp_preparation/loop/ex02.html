@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let h = parseInt(prompt("Enter triangle's height: "));
+  let draw = '';
+  for ( let i = 1; i <= h; i++) {
+    for (let j = 1; j <= h-i; j++){
+        draw +="&nbsp&nbsp;";
+    }
+    for(let k = 1; k <= 2*i-1; k++) {
+      draw +="*";
+    }
+    draw+= "<br/>";
+  }
+  document.write(draw);
+</script>
+</body>
+</html>

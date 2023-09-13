@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form onsubmit="return false">
+        <p>Feet: <input type="text" id="feet"/>
+            <button onclick="showArea1()">-></button>
+            <input type="text" id="resultMeter"></p>
+        <p>Meter: <input type="text" id="meter"/>
+            <button onclick="showArea2()">-></button>
+            <input type="text" id="resultFeet"></p>
+    </form>
+<script type="text/javascript">
+    function showArea1() {
+        let feet = document.getElementById("feet").value;
+        let resultMeter = feet*0.305;
+        console.log(resultMeter);
+        document.getElementById("resultMeter").value = resultMeter;
+    }
+    function showArea2() {
+        let meter = document.getElementById("meter").value;
+        let resultFeet = meter*3.279;
+        console.log(resultFeet);
+        document.getElementById("resultFeet").value = resultFeet;
+    }
+</script>
+</body>
+</html>

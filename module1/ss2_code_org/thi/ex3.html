@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkPrime(number){
+      if(number<=1) return false
+      for(let i = 2 ; i<= Math.sqrt(number); i++){
+          if(number%i === 0){
+              return false;
+          }
+      }
+      return true;
+  }
+  function lietKe(array){
+      let newArr = [];
+      for(let i = 0; i<array.length; i++){
+          if(checkPrime(array[i])){
+              newArr.push(array[i]);
+          }
+      }
+      return newArr;
+  }
+
+  let arr = [1, 5, 6, 23, 8, 47, 10, 3];
+  let prime = lietKe(arr);
+  prime.sort(function (a, b){
+      return a - b;
+  })
+  console.log(prime);
+</script>
+</body>
+</html>

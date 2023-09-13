@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Mobile = function (battery, editor, inbox, sent, on) {
+    this.battery = battery;
+    this.editor = editor;
+    this.inbox = inbox;
+    this.sent = sent;
+    this.isOn = on
+    this.charge = function (){
+        for (let i = this.battery; i <= 100; i++){
+            this.battery = i;
+            alert("Đang sạc " + this.battery + "%")
+            if (i === 100) {
+                alert("Đã sạc đầy");
+            }
+        }
+    }
+    if (this.isOn === "on") {
+        this.status = function (){
+            return alert("on");
+        }
+
+        this.texting = function (){
+            this.battery--;
+            return this.editor.push(prompt("Enter character: "));
+        }
+        this.receive = function (){
+            this.battery--;
+            return this.inbox.push(this.sent[this.sent.length - 1]);
+        }
+        this.send = function (){
+            this.battery--;
+            return  this.sent.push(prompt("Sent a message"));
+        }
+        this.seenReceive = function (){
+            this.battery--;
+            return this.inbox.forEach(function (item) {
+                document.write(item + ", ");
+            });
+        }
+        this.seenSent = function () {
+            this.battery--;
+            return this.sent.forEach(function (item) {
+                document.write(item + ", ");
+            });
+        }
+        if (battery <= 20){
+            alert("Pin yếu");
+        }
+        if(battery === 1) {
+            this.isOn = 'off';
+        }
+    }
+  }
+
+  let nokiaEdit = ["Hello!", "Good Bye!"];
+  let iphoneEdit = ["Hi!", "Nice to meet you!"];
+  let nokiaReceive, iphoneSend;
+  nokiaReceive = iphoneSend = ["See you later!", "Let's meet at 7am!"];
+  let iphoneReceive, nokiaSend;
+  iphoneReceive = nokiaSend = ["See you later!", "OKay"];
+
+  let nokia = new Mobile(50, nokiaEdit, nokiaReceive, nokiaSend, "on");
+  // nokia.status();
+  // nokia.texting();
+  // nokia.receive();
+  nokia.send();
+  // nokia.seenReceive();
+  // nokia.seenSent();
+  // nokia.charge();
+
+  let iphone = new Mobile(50, iphoneEdit, iphoneReceive, iphoneSend, "on");
+  iphone.seenReceive();
+</script>
+</body>
+</html>

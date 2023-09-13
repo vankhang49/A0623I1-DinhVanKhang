@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Integer</title>
+</head>
+<body>
+<script>
+  let numbers = prompt("Nhập số lượng số tự nhiên cần tính tổng: ", '');
+  let n = 0;
+  let count = 0;
+  let sum = 0;
+  if (numbers < 0) {
+    alert("Yêu cầu nhập số nguyên dương");
+  } else {
+    for (let loop = 0; count <= numbers; loop++) {
+      let mark = 0;
+      if(n % 7 === 0) {
+        mark = 1
+      }
+
+      if (mark === 1) {
+        count++;
+        sum += n;
+        console.log(n);
+      }
+
+      n++;
+
+    }
+  }
+
+  document.write("Sum of 30 natural numbers divisible by 7 = " + sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Divisible</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Enter number a: "));
+    let b = parseInt(prompt("Enter number b: "));
+    if(b === 0) {
+        alert("Vui lòng nhập b lớn hơn 0!");
+    } else {
+        let c = a % b
+        if (c === 0) {
+            alert(a + " chia hết cho " + b);
+        } else {
+            alert(a + " không chia hết cho " + b);
+        }
+    }
+</script>
+</body>
+</html>

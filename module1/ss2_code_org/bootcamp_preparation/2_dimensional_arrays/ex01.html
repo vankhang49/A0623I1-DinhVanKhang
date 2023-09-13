@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Enter the length of the parent array: "));
+    let n = parseInt(prompt("Enter the length of the subarray: "));
+    let arr = Array(m);
+    for(let i = 0; i < arr.length; i++){
+        arr[i] =  Array(n);
+    }
+    for(let i = 0; i < arr.length; i++){
+        let k = n*i+1;
+        for(let j = 0; j< arr[i].length; j++){
+            arr[i][j] = k;
+            k++;
+        }
+    }
+    console.log(arr);
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j< arr[i].length; j++){
+            if(arr[i][j]%2){
+                sum += arr[i][j];
+            }
+        }
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

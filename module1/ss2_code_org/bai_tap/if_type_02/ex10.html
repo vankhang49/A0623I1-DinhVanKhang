@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity bill</title>
+</head>
+<body>
+<script>
+    let bac1 = 1678; bac2 = 1734; bac3 = 2014; bac4 = 2536; bac5 = 2834; bac6 = 2927;
+    let soDien = parseFloat(prompt("Vui lòng nhập số điện: "));
+    let tienDien;
+
+    if(soDien<0) {
+        alert("Vui lòng nhập lại số điện, số điện không được nhỏ hơn 0");
+    } else {
+        if (soDien <= 50) {
+            tienDien = soDien*bac1;
+            alert("Bạn đã dùng điện trong khoảng từ 0 - 50 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        } else if (soDien <= 100) {
+            tienDien = 50*bac1+((soDien-50)*bac2);
+            alert("Bạn đã dùng điện trong khoảng từ 51 - 100 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        } else if (soDien <= 200) {
+            tienDien = 50*bac1+(50*bac2)+((soDien-100)*bac3);
+            alert("Bạn đã dùng điện trong khoảng từ 101 - 200 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        } else if (soDien <= 300) {
+            tienDien = 50*bac1+(50*bac2)+(100*bac3)+((soDien-200)*bac4);
+            alert("Bạn đã dùng điện trong khoảng từ 201 - 300 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        } else if (soDien <= 400) {
+            tienDien = 50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+((soDien-300)*bac5);
+            alert("Bạn đã dùng điện trong khoảng từ 301 - 400 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        } else {
+            tienDien = 50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+(100*bac5)+((soDien-400)*bac6);
+            alert("Bạn đã dùng điện lớn hơn 400 kWh, số tiền điện bạn phải trả là: " + tienDien + " Đồng");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let num = prompt("Enter number of array");
+  let arr = num.split(", ");
+  let arr2 = [];
+  console.log(arr);
+  for(let i = 0; i < arr.length; i++) {
+    arr2[i] = arr[arr.length - i - 1];
+  }
+  document.write(arr);
+  document.write("<br/>");
+  document.write(arr2);
+</script>
+</body>
+</html>

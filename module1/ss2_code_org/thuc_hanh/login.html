@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <form>
+        <h2>Login</h2>
+        <label>
+            Username: <input type="text" id="username">
+            Password: <input type="text" id="password">
+            <button onclick="showArea()">Login</button>
+        </label>
+    </form>
+    <script type="text/javascript">
+        function showArea() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            console.log("Tên đăng nhập là: " + username);
+            console.log("Mật khẩu là: " + password);
+            if (username === "Admin") {
+                if (password === "TheMaster") {
+                document.write("Welcome");
+                alert("Welcome");
+                } else if (password === "null") {
+                document.write("Canceled");
+                alert("Canceled");
+                } else {
+                document.write("Wrong Password");
+                alert("Wrong Password");
+                }
+            } else if (username == null) {
+                document.write("Canceled");
+                alert("Canceled");
+            } else {
+                document.write("I don't know you");
+                alert("I don't know you");
+            }
+        }
+    </script>
+</body>
+</html>

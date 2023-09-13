@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h2>Chuẩn hoá và tìm từ dài nhất trong xâu ký tự</h2>
+  <label><input type="text" id = "string"></label>
+  <div><button onclick="main()">Result</button></div>
+  <div>Trước khí chuẩn hoá: <span id="before"></span></div>
+  <div>Sau khí chuẩn hoá: <span id="after"></span></div>
+  <div>Từ dài nhất: <span id="result"></span></div>
+</div>
+<script>
+  function main(){
+    let str = document.getElementById("string").value;
+    let arr = str.split(" ");
+    let kq = "";
+    let tmp;
+    for(let i = 0; i < arr.length; i++){
+      tmp = arr[i].trim().toLowerCase()
+      if(tmp!==""){
+        tmp = tmp.substr(0,1).toUpperCase() + tmp.substr(1);
+          console.log(tmp.substr(0,1), tmp.substr(1))
+        kq += tmp + " ";
+      }
+    }
+    let max = 0;
+    arr = kq.split(" ");
+    let longest = "";
+    console.log(arr);
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].length > max){
+          max = arr[i].length;
+          longest = arr[i];
+        }
+    }
+    console.log(max);
+    console.log(longest);
+    document.getElementById("before").innerHTML = str;
+    document.getElementById("after").innerHTML = kq.trim();
+    document.getElementById("result").innerHTML = longest;
+  }
+</script>
+</body>
+</html>

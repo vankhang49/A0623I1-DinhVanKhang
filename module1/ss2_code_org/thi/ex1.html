@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = Array(20);
+    for(let i = 0; i< arr.length; i++){
+        arr[i] = i+1;
+    }
+    let sumodd = 0;
+    let sumeven = 0;
+    let sub;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] % 2 === 0 ? sumeven += arr[i] : sumodd += arr[i];
+    }
+    console.log(sumeven, sumodd);
+    sub = sumeven - sumodd;
+    console.log(arr);
+    console.log(sub);
+</script>
+</body>
+</html>

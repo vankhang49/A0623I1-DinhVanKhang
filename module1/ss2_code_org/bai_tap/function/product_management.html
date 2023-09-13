@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .form {
+        position: absolute;
+    }
+    .add {
+        padding: 30px;
+        background-color: #E9E9E9;
+        justify-content: space-between;
+    }
+    .add input {
+        width: 70%;
+        height: 30px;
+        border-radius: 5%;
+    }
+    .add button {
+        background-color: #00cc00;
+        color: white;
+        width: 60px;
+        height: 35px;
+        border-radius: 10%;
+    }
+    #quantity {
+        text-align: center;
+        color: #d61b06;
+        font-weight: bold;
+    }
+    .table {
+        width: 100%;
+        font-weight: bold;
+
+    }
+    .btnEdit, .btnDelete {
+        background-color: #00cc00;
+        color: white;
+        width: 60px;
+        height: 30px;
+        border-radius: 10%;
+        text-align: center;
+        margin: 20px 70px;
+    }
+    tr:nth-child(odd) {
+        background-color: #dddddd;
+    }
+</style>
+<body>
+<div class="form">
+    <div class="add">
+        <label><input type="text" id="newProduct"></label>
+        <label><button onclick="add()">Add</button> </label>
+    </div>
+    <h2>Display All Product</h2>
+    <div id="display">
+            <h3>Product Name</h3>
+            <span id="quantity"></span>
+    </div>
+    <div id="products"></div>
+</div>
+<script>
+    let products = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4", "Apple Iphone 6s", "Xiaomi Mi 5s Plus"];
+    let fdisplay = document.getElementById("display");
+    fdisplay.addEventListener("click", display);
+    function display(){
+        let table = "<table class='table'>";
+        for (let i = 0; i < products.length; i++){
+            table += "<tr>" + "<td style='width: 40%'>" + products[i] + "</td>" +
+                "<td>" + "<input class='btnEdit' type='button' value='Edit' data-index='" + i + "'>" + "</td>" +
+            "<td>" + "<input class='btnDelete' type='button' value='Delete' data-index='" + i + "'>" + "</td>" + "</tr>";
+        }
+        table += "<table/>";
+        document.getElementById("products").innerHTML = table;
+        document.getElementById("quantity").innerHTML = products.length + "products";
+        let btnDelete = document.getElementsByClassName("btnDelete");
+        for (let i = 0; i < btnDelete.length; i++) {
+            btnDelete[i].addEventListener("click", deleteProduct);
+        }
+        let btnEdit = document.getElementsByClassName("btnEdit");
+        for (let i = 0; i < btnDelete.length; i++) {
+            btnEdit[i].addEventListener("click", editProduct);
+        }
+    }
+    function deleteProduct(event) {
+        let index = event.target.getAttribute("data-index");
+        if (index !== null) {
+            products.splice(index, 1);
+            display();
+        }
+    }
+    function editProduct(event) {
+        let index = event.target.getAttribute("data-index");
+        if (index !== null) {
+            products[index] = prompt("Nhập tên mới của sản phẩm");
+            display();
+        }
+    }
+    function add() {
+        let product = document.getElementById("newProduct").value;
+        products.push(product);
+        display();
+    }
+</script>
+</body>
+</html>

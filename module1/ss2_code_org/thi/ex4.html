@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="mobile">
+    <button onclick="newMobile()">New Mobile</button>
+    <label><h3 id="display">Danh sách điện thoại</h3></label>
+    <label><span id="result"></span></label>
+</div>
+<script>
+    function Mobile(code, name, type, price){
+        this.code = code;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.getCode = function (){
+            return this.code;
+        }
+        this.setCode = function (code){
+            this.code = code;
+        }
+        this.getName = function (){
+            return this.name;
+        }
+        this.setName = function (name){
+            this.name = name;
+        }
+        this.getType = function (){
+            return this.type;
+        }
+        this.setType = function (type){
+            this.type = type;
+        }
+        this.getPrice = function (){
+            return this.price;
+        }
+        this.setPrice = function (price){
+            this.price = price;
+        }
+        this.toString = function (){
+            return `${this.getName()}, Mã ${this.getCode()}, Hãng ${this.getType()}, Giá ${this.getPrice()} VND`;
+        }
+    }
+
+    let phone1 = new Mobile("NK2007", "Nokia7", "Nokia", 1000000);
+    let phone2 = new Mobile("IP2023", "Iphone15", "Apple", 30000000);
+    let phone3 = new Mobile("XM2019", "Xiaomi19", "Xiaomi", 15000000);
+    let phone4 = new Mobile("SU2023", "SamsungS23", "Samsung", 35000000);
+    let phone = [];
+    phone.push(phone1, phone2, phone3, phone4);
+
+    function newMobile(){
+        let str = confirm("Do you want to create new mobile?");
+        if(str === false){
+
+        }else {
+            let code = prompt("Enter phone's code");
+            let name = prompt("Enter phone's name");
+            let type = prompt("Enter phone's type");
+            let price = prompt("Enter phone's price");
+            let new_phone = new Mobile(code, name, type, price);
+            phone.push(new_phone);
+        }
+    }
+    let dis = document.getElementById("display");
+    document.addEventListener("click", display);
+    function display(){
+        for(let i = 0; i < phone.length -1; i++){
+            for(let j = 0; j< phone.length-i-1; j++){
+                if(phone[j].getName() > phone[j+1].getName()){
+                    let temp = phone[j];
+                    phone[j] = phone [j+1];
+                    phone[j+1] = temp;
+                }
+            }
+        }
+        let table = "<table border='1' style='border: solid 1px black; border-collapse: collapse'>";
+        table += "<tr>" + "<th>" + "Danh sách điện thoại"+"</th>"
+        for(let i = 0; i < phone.length; i++){
+            table += "<tr>" + "<td>" + phone[i].toString() + "</td>" + "</tr>"
+        }
+        table += "</table>"
+        document.getElementById("result").innerHTML = table;
+    }
+</script>
+</body>
+</html>

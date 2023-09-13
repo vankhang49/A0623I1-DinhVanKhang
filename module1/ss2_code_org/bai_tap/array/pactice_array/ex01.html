@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr= [];
+  let count=0;
+  let i;
+  let arr2=[];
+
+  for (i=0; i < 10; i++) {
+    arr[i] = Math.floor((Math.random()*100) + 1);
+  }
+  for (i=0; i < 10; i++) {
+    if(arr[i]>=10) {
+      count++;
+      arr2.push(arr[i]);
+    }
+  }
+  document.write("Có " + count + " >=10");
+  document.write("<br/>");
+  document.write(arr2);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonacci</title>
+</head>
+<body>
+<script>
+    const number = parseInt(prompt('Enter the number of terms: '));
+    let n1 = 0, n2 = 1;
+    let temp;
+    document.write("Fibonacci: ");
+
+    for (let i = 1; i <= number; i++) {
+        console.log(n1);
+        temp = n1 + n2;
+        n1 = n2;
+        n2 = temp;
+        document.write(temp + ", ")
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factorial of a positive integer</title>
+</head>
+<body>
+    <script>
+        // let nums = parseInt(prompt("Hãy nhập một số nguyên dương mà bạn muốn tính giai thừa!"));
+        // if (nums < 0) {
+        //     alert("Hãy nhập số nguyên dương!");
+        // } else {
+        //     function factorial(nums) {
+        //         if(nums === 0) {
+        //             return 1;
+        //         }
+        //         return nums * factorial(nums-1);
+        //     }
+        //     document.write(factorial(nums));
+        // }
+
+        const nums = parseInt(prompt("Hãy nhập một số nguyên dương mà bạn muốn tính giai thừa!"));
+        let mult = 1;
+        if (nums < 0) {
+            alert("Hãy nhập số nguyên dương!");
+        } else {
+            function factorial() {
+                for (let i = nums; i >= 1; i--) {
+                    mult = mult * i;
+                }
+                document.write(mult);
+            }
+            factorial(nums);
+        }
+    </script>
+</body>
+</html>

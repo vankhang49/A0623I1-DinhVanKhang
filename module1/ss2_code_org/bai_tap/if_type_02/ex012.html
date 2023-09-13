@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank interest rate</title>
+</head>
+<body>
+<script>
+  let p = parseFloat(prompt("Nhập số tiền gửi: "));
+  let r = parseFloat(prompt("Nhập lãi suất hàng năm: "));
+  let t = parseFloat(prompt("Số ngày gửi: "));
+
+  let profit = p*r*t/365
+  alert("Số tiền nhận được sau " + t + " ngày là: " + profit);
+</script>
+</body>
+</html>

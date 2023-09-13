@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let numerators = [5, 2, 5];
+  let denominators = [6, 3, 4];
+  let maxFraction = Array(numerators.length);
+
+  for(let i = 0; i < maxFraction.length; i++){
+      maxFraction[i] = numerators[i] / denominators[i];
+  }
+  let max = maxFraction[0];
+  let index = 0;
+  for(let i = 1; i < maxFraction.length; i++){
+      if(maxFraction[i]>max) {
+          max = maxFraction[i];
+          index = i;
+      }
+  }
+  document.write(max + " là phân số lớn nhất, có chỉ số là " + index);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function circleArea(){
+    return pi*2*r;
+  }
+
+  function circlePerimeter(){
+    return pi*r*r;
+  }
+
+  let r = parseFloat(prompt("Nhập bán kính hình tròn: "));
+  let pi = 3.14;
+  document.write("Chu vi hình tròn là " + circlePerimeter(r, pi) + "<br/>");
+  document.write("Diện tích hình tròn là " + circleArea(r, pi));
+</script>
+</body>
+</html>

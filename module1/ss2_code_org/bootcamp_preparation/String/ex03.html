@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function commonCharacterCount(s1, s2) {
+        let count = 0;
+        for(let i = 0; i < s1.length ; i++) {
+            if (s2.indexOf(s1[i]) > -1) {
+                count++;
+                s2 = s2.replace(s1[i], '');
+            }
+        }
+        console.log(s2);
+        return count;
+    }
+
+    console.log(commonCharacterCount("aabcc", "adcaa"));
+</script>
+</body>
+</html>

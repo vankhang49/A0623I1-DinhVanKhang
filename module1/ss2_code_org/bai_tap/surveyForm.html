@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Research Survey</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .form {
+        font-family: "Lucida Sans Unicode",serif;
+        font-size: smaller;
+        margin-left: 10px;
+      }
+
+      .title {
+        width: 100%;
+        position: relative;
+        border-bottom: dotted;
+        border-width: thin;
+        padding-bottom: 10px;
+      }
+
+      .content {
+        padding-top: 10px;
+      }
+
+      .header {
+        font-weight: bold;
+      }
+
+      .table {
+        height: 200px;
+        width: 100%;
+        border: thin solid black;
+        border-collapse: collapse;
+        border-spacing: 0;
+        padding: 0;
+      }
+
+      .button {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+  <form action="surveyForm.html" class="form">
+    <div class="title">
+      <label><h2 style="font-weight: normal">Market Research Survey</h2></label>
+      <p>Please take a few moments to complete this satisfaction survey.</p>
+    </div>
+
+    <div class="content">
+      <label class="header">What is your age range?</label><br/>
+      <label>
+        <select name="age" style="width: 50%">
+          <option>18-24</option>
+          <option>25-34</option>
+          <option>35-50</option>
+          <option>50+</option>
+      </select>
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">What is your yearly income range?</label><br/>
+      <label>
+        <select name="age" style="width: 50%">
+          <option>$0 - $25,000</option>
+          <option>$25,001 - $50,000</option>
+          <option>$50,001 - $100,000</option>
+          <option>$100,000+</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">Gender Identity</label><br/>
+      <label>
+        <input type="radio" name="gender" checked> Male<br/>
+        <input type="radio" name="gender"> Female<br/>
+        <input type="radio" name="gender"> Nonbinary<br/>
+        <input type="radio" name="gender"> Other<br/>
+        <input type="text" name="gender" style="margin-left: 20px; width: 130px"><br/>
+        <span style="font-size: x-small; margin-left: 20px">Maximum of 250 characters.</span>
+        <span style="font-size: x-small; margin-left: 15px; font-style: italic">Currently Used: 0 characters.</span>
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+      <br/>
+      <label>
+        <input type="checkbox" name="sp"/>Product 1<br/>
+        <input type="checkbox" name="sp"/>Product 2<br/>
+        <input type="checkbox" name="sp"/>Product 3
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">How often would you use our new product?</label><br/>
+      <label>
+        <input type="radio" name="day"> Daily<br/>
+        <input type="radio" name="day"> Weekly<br/>
+        <input type="radio" name="day"> Monthly
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">What would you pay for the new product?</label><br/>
+      <label>
+        <span>$</span>
+        <input type="text" name="dollars" style="width: 70px"/> .
+        <input type="text" name="cents" style="width: 17px"/><br/>
+        <span style="font-size: x-small; margin-left: 15px">Dollar</span>
+        <span style="font-size: x-small; margin-left: 50px">Cent</span>
+      </label>
+    </div>
+
+    <div class="content">
+      <label class="header">What features would you like to see in the new product.</label>
+      <br/>
+      <label><textarea rows="10" style="width: 100%"></textarea></label>
+    </div>
+
+    <div class="content">
+      <label>please rate your level of agreement with the following statements</label>
+      <label>
+        <table class="table" border="1">
+          <tr style="background-color: lightgray; valign: middle">
+            <th></th>
+            <th style="width: 130px">Strongly Disagree</th>
+            <th style="width: 130px">Disagree</th>
+            <th style="width: 130px">Agree</th>
+            <th style="width: 130px">Strong Agree</th>
+          </tr>
+
+          <tr>
+            <td style="font-weight: bold">Our products are priced fairly</td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 1
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 2
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 3
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 4
+            </td>
+          </tr>
+            <td style="font-weight: bold">Our products are high quality</td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 1
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 2
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 3
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 4
+            </td>
+          <tr>
+            <td style="font-weight: bold">You would recommend our producr to friend or coworker</td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 1
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 2
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 3
+            </td>
+            <td align="center">
+              <input type="radio" name="price" style="display: block"> 4
+            </td>
+          </tr>
+        </table>
+      </label>
+    </div>
+
+    <div class="button">
+      <input type="submit" name="smform" value="Submit" style="width: 60px; font-weight: bold">
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function Remote(code){
+    this.code = code;
+    this.chchannel = function (tivi, arr){
+        if(this.code === tivi.code && tivi.status === "on"){
+          let indexChannel = parseInt(prompt("What channel that you want to change?"));
+            return tivi.channel = arr[indexChannel-1];
+        }
+    }
+    this.chvolume = function (tivi){
+      if(this.code === tivi.code && tivi.status === "on"){
+        let changevolumn = parseInt(prompt("How much volume do you want?"));
+        if(changevolumn === tivi.volume){
+
+        } else if(changevolumn > tivi.volume){
+          while(tivi.volume < changevolumn){
+            tivi.volume += 1;
+            alert("volume: " + tivi.volume);
+          }
+        } else {
+          while(tivi.volume > changevolumn){
+            tivi.volume -= 1;
+            alert("volume: " + tivi.volume);
+          }
+        }
+      }
+    }
+  }
+  function Tivi(channel, volume, status, code){
+    this.channel = channel;
+    this.volume = volume;
+    this.status = status;
+    this.code = code;
+    this.chchannel = function(arr){
+      let change = prompt("^ or v");
+      if(change === "^"){
+          this.channel = arr[arr.indexOf(this.channel)+1];
+      } else if(change === "v"){
+          this.channel = arr[arr.indexOf(this.channel)-1];
+      }
+    }
+    this.chvolume = function (){
+      let changevolumn = parseInt(prompt("How much volume do you want?"));
+      if(changevolumn === volume){
+
+      } else if(changevolumn > volume){
+        while(this.volume < changevolumn){
+          this.volume += 1;
+          alert("volume: " + volume);
+        }
+      } else {
+        while(this.volume >= changevolumn){
+          this.volume -= 1;
+          alert("volume: " + volume);
+        }
+      }
+    }
+  }
+
+  let channelArr = ["zoo","football","cartoon","Music","wolrd"];
+  let tivi = new Tivi(channelArr[0], 20, "on", "LG");
+  let remote = new Remote("LG");
+  console.log(tivi.channel);
+  // remote.chvolume(tivi);
+  // remote.chchannel(tivi, channelArr);
+  tivi.chchannel(channelArr);
+  alert(tivi.channel);
+</script>
+</body>
+</html>

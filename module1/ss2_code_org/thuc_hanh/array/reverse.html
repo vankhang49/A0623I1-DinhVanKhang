@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [-3,5,1,3,2,10];
+  let i = 0;
+  let size = arr.length;
+  let temp;
+  for(i; i < size; i++){
+    temp = arr[i];
+    arr[i] = arr[size - 1];
+    arr[size - 1] = temp;
+    size--;
+  }
+  document.write(arr);
+</script>
+</body>
+</html>

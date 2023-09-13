@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <table class="calculator">
+        <tr>
+            <th colspan="7"><label><input type="text" id="result"></label></th>
+        </tr>
+        <tr class="buttons">
+            <td><label><button class="button" value="radiant" onclick="buttonHandler()">Rad</button></label></td>
+            <td><label><button class="button" value="deg" onclick="buttonHandler()">Deg</button></label></td>
+            <td><label><button class="button" value="factorial" onclick="buttonHandler()">x!</button></label></td>
+            <td><label><button class="button" value="o_parenthesis" onclick="buttonHandler()">(</button></label></td>
+            <td><label><button class="button" value=c_parenthesis" onclick="buttonHandler()">)</button></label></td>
+            <td><label><button class="button" value="percent" onclick="buttonHandler()">%</button></label></td>
+            <td><label><button class="button" value="AC" onclick="buttonHandler()">AC</button></label></td>
+        </tr>
+        <tr class="buttons">
+            <td><label><button class="button" value="inv" onclick="buttonHandler()">Inv</button></label></td>
+            <td><label><button class="button" value="sin" onclick="buttonHandler()">sin</button></label></td>
+            <td><label><button class="button" value="ln" onclick="buttonHandler()">ln</button></label></td>
+            <td><label><button class="button"  onclick="buttonHandler(this)">7</button></label></td>
+            <td><label><button class="button" value="8" onclick="buttonHandler()">8</button></label></td>
+            <td><label><button class="button" value="9" onclick="buttonHandler()">9</button></label></td>
+            <td><label><button class="button" value="division" onclick="buttonHandler()">÷</button></label></td>
+        </tr>
+        <tr class="buttons">
+            <td><label><button class="button" value="pi" onclick="buttonHandler()">π</button></label></td>
+            <td><label><button class="button" value="cos" onclick="buttonHandler()">cos</button></label></td>
+            <td><label><button class="button" value="log" onclick="buttonHandler()">log</button></label></td>
+            <td><label><button class="button" value="4" onclick="buttonHandler()">4</button></label></td>
+            <td><label><button class="button" value="5" onclick="buttonHandler()">5</button></label></td>
+            <td><label><button class="button" value="6" onclick="buttonHandler()">6</button></label></td>
+            <td><label><button class="button" value="multiplication" onclick="buttonHandler()">X</button></label></td>
+        </tr>
+        <tr class="buttons">
+            <td><label><button class="button" value="Euler" onclick="buttonHandler()">e</button></label></td>
+            <td><label><button class="button" value="tan" onclick="buttonHandler()">tan</button></label></td>
+            <td><label><button class="button" value="sqrt" onclick="buttonHandler()">√</button></label></td>
+            <td><label><button class="button" value="1" onclick="buttonHandler()">1</button></label></td>
+            <td><label><button class="button" value="2" onclick="buttonHandler()">2</button></label></td>
+            <td><label><button class="button" value="3" onclick="buttonHandler()">3</button></label></td>
+            <td><label><button class="button" value="subtraction" onclick="buttonHandler()">–</button></label></td>
+        </tr>
+        <tr class="buttons">
+            <td><label><button class="button" value="ans" onclick="buttonHandler()">Ans</button></label></td>
+            <td><label><button class="button" value="exp" onclick="buttonHandler()">EXP</button></label></td>
+            <td><label><button class="button" value="hat" onclick="buttonHandler()">x<sup>y</sup></button></label></td>
+            <td><label><button class="button" value="0" onclick="buttonHandler()">0</button></label></td>
+            <td><label><button class="button" value="point" onclick="buttonHandler()">.</button></label></td>
+            <td><label><button class="button" value="equal()" onclick="buttonHandler()">=</button></label></td>
+            <td><label><button class="button" value="addition" onclick="buttonHandler()">+</button></label></td>
+        </tr>
+    </table>
+<script src="calculator.js">
+</script>
+</body>
+</html>

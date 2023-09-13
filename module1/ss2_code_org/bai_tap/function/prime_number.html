@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        // Nếu n bé hơn 2 tức là không phải số nguyên tố
+        if (number < 2) {
+           return mark = 0;
+        } else if (number === 2) {
+            return mark = 1;
+        } else if (number % 2 === 0) {
+            return mark = 0;
+        } else {
+            for (let i = 3; i < Math.sqrt(number); i += 2) {
+                if (number % i === 0) {
+                    return mark = 0;
+                }
+            }
+        }
+    }
+    let num = parseInt(prompt("Enter a number: "));
+    let mark = 1;
+    isPrime(num);
+    if (mark === 1){
+        document.write(num + " là số nguyên tố <br/>");
+    }
+    else{
+        document.write(num + " không phải là số nguyên tố <br/>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadratic equation</title>
+</head>
+<body>
+<script>
+  alert("Phương trình bậc nhất có dạng: ax + b + c = 0")
+  let a = parseInt(prompt("Enter number a: "));
+  let b = parseInt(prompt("Enter number b: "));
+  let c = parseInt(prompt("Enter number c: "));
+  let x;
+
+  if( a === 0) {
+    alert("Phương trình trở thành phương trình bậc nhât")
+    if (b === 0) {
+      if (c === 0) {
+        alert("Phương trình " + b + "x + " + c + " = 0 có vô số nghiệm");
+      } else {
+        alert("Phương trình " + b + "x + " + b + " = 0 vô nghiệm");
+      }
+    } else {
+      x = -c/b;
+      alert("Phương trình " + b + "x + " + c + " = 0 có nghiệm duy nhất x = " + x);
+    }
+  } else {
+    let delta = b*b - 4*a*c;
+    if (delta < 0) {
+      alert("phương trình bậc hai " + a + "x^2 + " + b + "x + " + c + " = 0 vô nghiệm");
+    } else if (delta === 0) {
+      x = -b/(2*a);
+      alert("phương trình bậc hai " + a + "x^2 + " + b + "x + " + c + " = 0 có nghiệm kép x1 = x2 = " + x);
+    } else {
+      x = (-b + Math.sqrt(delta))/(2*a);
+      let y = (-b - Math.sqrt(delta))/(2*a);
+      alert("phương trình bậc hai " + a + "x^2 + " + b + "x + " + c + " = 0 có nghiệm x1 = " + x + " và x2 = " + y);
+    }
+  }
+</script>
+</body>
+</html>

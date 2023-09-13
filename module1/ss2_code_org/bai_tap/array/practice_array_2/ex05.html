@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let strA = prompt("Enter a sequency 1");
+  let strB = prompt("Enter a sequency 2");
+  let arrA = strA.split("");
+  let arrB = strB.split("");
+  let sizeA = arrA.length;
+  let sizeB = arrB.length;
+  let same = 0;
+
+  if (sizeA !== sizeB) {
+    alert("Hai chuỗi chưa chắc đã giống nhau!");
+  } else {
+    for(let i = 0; i < sizeA; i++) {
+      if(arrA[i] !== arrB[i]) {
+        same = 1;
+      }
+    }
+  }
+
+  if (same === 0) {
+    alert("Hai chuỗi hoàn toàn giống nhau");
+  } else {
+    alert("Hai chuỗi là khác nhau");
+  }
+</script>
+</body>
+</html>

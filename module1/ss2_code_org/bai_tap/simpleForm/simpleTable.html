@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Table</title>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 90%;
+        min-width: 960px;
+        background: #e2e2e2;
+      }
+      h1 {
+        color: blue;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .text {
+        color: blue;
+        margin-bottom: 10px;
+      }
+
+      table {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      tr:nth-child(2) {
+        background-color: orange;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      td,th {
+        border: solid 1px grey;
+        height: 20px;
+        padding: 5px;
+      }
+    </style>
+</head>
+<body>
+  <h1>Thời khoá biểu</h1>
+  <br>
+  <div class="text">
+    <label style="margin-right: 77%">Lớp: T0908I</label>
+    <label>Thời gian học: 13h30 - 17h30</label><br/>
+    <label style="margin-right: 77%">Giáo viên: KhoaNV</label>
+    <label>Ngày học: Thứ 3, 5, 7</label><br/>
+    <label>Phòng học: Class3/Lab3</label>
+  </div>
+  <table>
+    <tr>
+      <th colspan="3"></th>
+      <th style="background-color: yellow">Thứ 3</th>
+      <th style="background-color: yellow">Thứ 5</th>
+      <th style="background-color: yellow">Thứ 7</th>
+    </tr>
+    <tr>
+      <td>Tuần</td>
+      <td>Ngày bắt đầu</td>
+      <td>Ngày kết thúc</td>
+      <td colspan="3">Môn học</td>
+    </tr>
+    <tr>
+      <td align="center">01</td>
+      <td>01/09/2009</td>
+      <td>05/09/2009</td>
+      <td>CF - T1, L1</td>
+      <td>CF - T2, L2</td>
+      <td>CF - T3, L3</td>
+    </tr>
+    <tr>
+      <td align="center">02</td>
+      <td>08/09/2009</td>
+      <td>12/09/2009</td>
+      <td>CF - T4, L4</td>
+      <td>CF - Written test</td>
+      <td>C - T1, L1</td>
+    </tr>
+    <tr>
+      <td align="center">03</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

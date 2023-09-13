@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum fibonacci</title>
+</head>
+<body>
+<script>
+  let n1 = 0, n2 = 1;
+  let temp;
+  let sum = 0;
+
+  for (let i = 1; i <= 20; i++) {
+    console.log(n1);
+    temp = n1 + n2;
+    n1 = n2;
+    n2 = temp;
+    sum += temp;
+  }
+  document.write("Sum of 20 fibonacci numbers = " + sum);
+</script>
+</body>
+</html>

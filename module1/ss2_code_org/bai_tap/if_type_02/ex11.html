@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal income tax</title>
+</head>
+<body>
+<script>
+  let thuNhap = parseFloat(prompt("Nhập thu nhập của bạn: "));
+  let thue;
+
+  if (thuNhap <= 6000000){
+    thue = 0;
+  }else if (thuNhap <= 9000000) {
+    thue = 0.02 * thuNhap;
+  }else if (thuNhap <= 12000000) {
+    thue = 0.03 * thuNhap;
+  } else {
+    thue = 0.045 * thuNhap;
+  }
+  alert("Thue phai dong la: " + thue);
+</script>
+</body>
+</html>

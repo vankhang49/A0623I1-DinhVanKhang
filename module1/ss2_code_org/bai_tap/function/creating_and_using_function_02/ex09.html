@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function checkForExistence (){
+    let mark = 0;
+    for(let i = 0; i < arr.length; i++){
+      if (arr[i] === find) {
+        count++;
+        mark = 1;
+      }
+    }
+    if (mark === 1) {
+      return count;
+    } else {
+      return -1;
+    }
+  }
+  let char = prompt("Nhập vào một mảng các ký tự, các ký tự cách nhau bởi dấu ', ' ");
+  let arr = char.split(", ");
+  console.log(arr);
+  let find = prompt("Nhập vào ký tự mà bạn muốn tìm: ");
+  let count = 0;
+  checkForExistence(arr, find);
+  if (count > 0) {
+    document.write("Số lần xuất hiện của ký tự " + find + " là " + count + " lần");
+  } else {
+    document.write("Không tìm thấy ký tự " + find + " trong mảng");
+  }
+</script>
+</body>
+</html>

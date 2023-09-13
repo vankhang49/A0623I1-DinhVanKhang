@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rank</title>
+</head>
+<body>
+<script>
+    let kt = parseFloat(prompt("Điểm bài kiểm tra: "));
+    let gk = parseFloat(prompt("Điểm bài thi giữa kì: "));
+    let ck = parseFloat(prompt("Điểm bài thi cuối kì kì: "));
+
+    let synthetic = (kt + gk * 2 + ck * 3) / 6;
+
+    if(synthetic >= 9) {
+        document.write("Điểm tổng hợp: " + synthetic + ", xếp hạng học lực: Xuất sắc");
+    } else if(synthetic >= 8) {
+        document.write("Điểm tổng hợp: " + synthetic + ", xếp hạng học lực: Giỏi");
+    } else if(synthetic >= 6.5) {
+        document.write("Điểm tổng hợp: " + synthetic + ", xếp hạng học lực: Khá");
+    } else if(synthetic >= 3.5) {
+        document.write("Điểm tổng hợp: " + synthetic + ", xếp hạng học lực: Trung bình");
+    } else {
+        document.write("Điểm tổng hợp: " + synthetic + ", xếp hạng học lực: Yếu");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank interest rate</title>
+</head>
+<body>
+    <div>
+        <h1>Bank interest rate</h1>
+    </div>
+<script>
+    let initial = parseFloat(prompt("Nhập số tiền vay ban đầu: "));
+    let month = parseInt(prompt("Nhập số tháng vay: "));
+    let rate = 0.07;
+    let monthlyInterest = 0;
+
+    for (let i = 1; i <= month; i++) {
+        monthlyInterest = initial*rate/12;
+        initial += monthlyInterest;
+    }
+    document.write("Tổng số tiền phải trả là: " + initial + " VND");
+</script>
+</body>
+</html>

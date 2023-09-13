@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function demSoKyTu(string){
+        let count = 0;
+        let arr = string.split("")
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] === arr[i].toLocaleUpperCase() && arr[i] !== ' '){
+                console.log(arr[i]);
+                count++;
+            }
+        }
+        return count;
+    }
+    let str = prompt("Enter a string");
+    let count = demSoKyTu(str);
+    count > 0 ? alert("The String '"+ str + "' have " + count + " contain upper char")
+        : alert("The String is not contain upper char");
+
+</script>
+</body>
+</html>

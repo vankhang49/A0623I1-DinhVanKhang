@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <h1>Mời bạn chọn món</h1>
+        <label><input type="text" id="oder"></label>
+        <label><button onclick="getnumber()">Chọn</button></label>
+        <div id="price"></div>
+        <div id="quantity"></div>
+        <div id="finalprice"></div>
+    </div>
+    <h2>Menu</h2>
+    <div id="display"></div>
+</div>
+<script>
+    let oder = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa"];
+    let price = [12000, 18000, 10000, 10000, 5000, 20000];
+    let fdiplay = "";
+    for (let i = 0; i < oder.length; i++){
+        fdiplay += (i+1 + "("+oder[i]+")" + "<br/>");
+    }
+    document.getElementById("display").innerHTML = fdiplay;
+
+    let rs = 0;
+    function getnumber(){
+        let choice = parseInt(document.getElementById("oder").value);
+        if(choice<1 || choice > oder.length){
+                location.reload(true);
+        } else {
+            document.getElementById("price").innerHTML = oder[choice - 1] + " có giá " + price[choice - 1] + " VND";
+            rs = price[choice -1];
+            document.getElementById("quantity").innerHTML = "<label><input type='text' id='number' placeholder='Số lượng'></label>"
+                + "<label><button onclick='showfinal()'>Tổng</button></label>";
+        }
+    }
+    function showfinal(){
+        let number = parseInt(document.getElementById("number").value);
+        document.getElementById("finalprice").innerHTML = number * rs + " VND";
+    }
+
+</script>
+</body>
+</html>

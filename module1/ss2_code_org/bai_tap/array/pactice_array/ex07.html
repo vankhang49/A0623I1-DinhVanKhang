@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  alert("Hãy tạo mảng gồm 10 số nguyên!");
+  let int= [];
+  let remove = [];
+  for (let i = 0; i < 10; i++) {
+    int[i] = prompt("Nhập số nguyên: ");
+  }
+  for (let i = 0; i < int.length; i++) {
+    if(int[i] === "V") {
+      remove = int.splice(int.indexOf(int[i]),1);
+    }
+  }
+  document.write(int);
+</script>
+</body>
+</html>

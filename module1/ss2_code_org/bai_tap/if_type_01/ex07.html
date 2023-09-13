@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telephone charges.</title>
+</head>
+<body>
+<script>
+    let amount = parseInt(prompt("Số người trong gia đình bạn là: "));
+    let nums = parseInt(prompt("Tổng số cuộc gọi của gia đình bạn trong một ngày là: "));
+    let time = parseInt(prompt("Thời lượng mỗi cuộc gọi: phút"));
+    let fee = 3300; //phí điện thoại cho cuộc gọi 1 phút//
+    let payable;
+    if(time > 20) {
+        payable = nums * amount * time * fee * 1.1;
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable + "Đồng");
+        document.write("<br/>");
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable*30 + "Đồng");
+        document.write("<br/>");
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable*365 + "Đồng");
+    } else {
+        payable = nums * amount * time * fee;
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable + "Đồng");
+        document.write("<br/>");
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable*30 + "Đồng");
+        document.write("<br/>");
+        document.write("Cước phí điện thoại của gia đình bạn trong 1 ngày: " + payable*365 + "Đồng");
+    }
+</script>
+</body>
+</html>

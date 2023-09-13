@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funnt Question</title>
+</head>
+<body>
+  <div class="container">
+    <div class="heading" style="position:absolute; left:220px; top:175px;"><h1>Do you love me?</h1></div>
+    <div class="button">
+      <label><input type="button" value=" YES " onclick="showArea()" style="position:absolute; left:285px; top:235px;"/></label>
+      <label><input type="button" id="No" value="  NO  " onmouseover="hover()" style="position:absolute; left:360px; top:235px;"/></label>
+
+    </div>
+    <script>
+      function showArea(){
+        alert("<3");
+      }
+      function hover() {
+        console.log(1)
+        let x = Math.round(Math.random() * window.innerWidth);
+        let y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('No').style.left = x + 'px';
+        document.getElementById('No').style.top = y + 'px';
+      }
+    </script>
+  </div>
+</body>
+</html>

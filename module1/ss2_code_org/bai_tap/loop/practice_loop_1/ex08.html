@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the number</title>
+</head>
+<body>
+  <h1>Hãy thử đoán xem!</h1>
+  <div class="container">
+    <button onclick="start()" style="margin-left: 100px; width: 60px; height: 30px;font-size: large">Chơi</button>
+  </div>
+
+<script>
+  function start () {
+    alert("Bạn muốn đoán số trong khoảng nào?");
+    let first = parseInt(prompt("Nhập số bắt đầu: "));
+    let last = parseInt(prompt("Nhập số kết thúc: "));
+
+    let randomNumber = Math.floor(Math.random()*last)+first;
+    let choice = parseInt( prompt("Nhập số bạn muốn đoán:"));
+    let count = 1 ;
+
+    for(count; count <= 3; count++) {
+      if(choice === randomNumber) {
+        alert("Bạn đã đoán đúng");
+        break;
+      }else if (choice > randomNumber) {
+        alert("Hãy chọn số nhỏ hơn");
+        choice = parseInt( prompt("Nhập số bạn muốn đoán:"));
+      }else {
+        alert("Hãy chọn số lớn hơn");
+        choice = parseInt( prompt("Nhập số bạn muốn đoán:"));
+      }
+    }
+  }
+</script>
+</body>
+</html>
