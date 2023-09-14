@@ -1,4 +1,4 @@
-package Sesson1;
+package Sesson1.bai_tap.bai_tap;
 
 import java.util.Scanner;
 
