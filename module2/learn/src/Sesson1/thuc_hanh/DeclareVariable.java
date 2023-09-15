@@ -1,4 +1,4 @@
-package Sesson1.bai_tap.thuc_hanh;
+package Sesson1.thuc_hanh;
 
 public class DeclareVariable {
     public static void main(String[] args) {
