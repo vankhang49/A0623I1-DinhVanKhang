@@ -1,4 +1,4 @@
-package Sesson3.bai_tap;
+package Sesson3.thuc_hanh;
 import java.util.Scanner;
 public class MaxValueInArray {
     public static void main(String[] args) {
