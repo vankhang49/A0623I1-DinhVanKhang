@@ -1,6 +1,4 @@
 package Sesson3.bai_tap;
-
-import java.util.Arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 public class MinValueInArray {
