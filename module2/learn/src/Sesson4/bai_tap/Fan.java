@@ -18,10 +18,10 @@ public class Fan {
     public void setSpeed(int speed){
         this.speed = speed;
     }
-    public boolean getStatus(){
+    public boolean isOn(){
         return this.on;
     }
-    public void setStatus(boolean on){
+    public void setOn(boolean on){
         this.on = on;
     }
     public double getRadius(){
@@ -47,13 +47,13 @@ public class Fan {
 
     public static void main(String[] args) {
         Fan panasonic = new Fan();
-        panasonic.setStatus(true);
+        panasonic.setOn(true);
         panasonic.setColor("green");
         panasonic.setSpeed(FAST);
         panasonic.setRadius(6.9);
 
         Fan lifan = new Fan();
-        lifan.setStatus(false);
+        lifan.setOn(false);
         lifan.setSpeed(MEDIUM);
         lifan.setRadius(5.67);
         lifan.setColor("silver");
