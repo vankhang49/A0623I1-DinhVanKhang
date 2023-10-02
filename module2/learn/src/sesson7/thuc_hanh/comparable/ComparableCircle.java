@@ -1,6 +1,6 @@
 package sesson7.thuc_hanh.comparable;
 
-public class ComparableCircle extends Circle implements Comparable<ComparableCircle>{
+public class ComparableCircle extends Circle implements java.lang.Comparable<ComparableCircle> {
     public ComparableCircle(){
     }
     public ComparableCircle(double radius){
