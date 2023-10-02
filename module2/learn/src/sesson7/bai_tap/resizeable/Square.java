@@ -28,7 +28,7 @@ public class Square extends Shape implements Resizeable{
     }
     @Override
     public String toString() {
-        return "The rectangle has edge = " + getEdge() +
+        return "The square has edge = " + getEdge() +
                 ", perimeter = " + getPerimeter() +
                 " and area = " + getArea();
     }
