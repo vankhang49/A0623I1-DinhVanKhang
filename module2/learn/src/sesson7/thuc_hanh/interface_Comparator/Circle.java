@@ -1,6 +1,7 @@
 package sesson7.thuc_hanh.interface_Comparator;
 
-public class Circle {private double radius;
+public class Circle {
+    private double radius;
     private String color;
     private boolean filled;
     public Circle(){}
