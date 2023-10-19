@@ -1,14 +1,15 @@
 package sesson9.DAO;
 
 import sesson9.DTO.Student;
-import sesson9.DTO.StudentList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class StudentRepositoryImpl implements StudentRepository{
     //kết nối DB
-    private static final StudentList studentList = new StudentList<>();
+    private static final List<Student> studentList = new ArrayList<>();
     static {
         studentList.add(new Student(1, "Nguyễn Văn A"));
         studentList.add(new Student(2, "Trần Văn B"));
@@ -17,13 +18,13 @@ public class StudentRepositoryImpl implements StudentRepository{
     }
 
     @Override
-    public StudentList findAll() {
-        return studentList.cloneList();
+    public List<Student> findAll(){
+        return cloneList();
     }
 
     @Override
-    public Student findStuden(int index) {
-        return (Student) studentList.get(index);
+    public Student findStudent(int index) {
+        return studentList.get(index);
     }
 
     @Override
@@ -44,12 +45,12 @@ public class StudentRepositoryImpl implements StudentRepository{
         if(Objects.equals(choice, "id")){
             System.out.println("Enter the id that you want to edit");
             int id = Integer.parseInt(sc.nextLine());
-            Student student = (Student) studentList.get(i);
+            Student student = studentList.get(i);
             student.setId(id);
         } else {
             System.out.println("Enter the name that you want to edit");
             String name = sc.nextLine();
-            Student student = (Student) studentList.get(i);
+            Student student = studentList.get(i);
             student.setName(name);
         }
     }
@@ -59,10 +60,10 @@ public class StudentRepositoryImpl implements StudentRepository{
         studentList.remove(index);
     }
 
-    public static void main(String[] args) {
-        StudentList studentListC = studentList.cloneList();
-        for (int i = 0; i < studentListC.size(); i++){
-            System.out.println(studentListC.get(i));
-        }
+    @Override
+    public List<Student> cloneList() {
+        List<Student> printStudent = new ArrayList<>(studentList.size());
+        printStudent.addAll(studentList);
+        return printStudent;
     }
 }

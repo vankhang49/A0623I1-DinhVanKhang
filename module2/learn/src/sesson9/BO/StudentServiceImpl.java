@@ -3,8 +3,8 @@ package sesson9.BO;
 import sesson9.DAO.StudentRepository;
 import sesson9.DAO.StudentRepositoryImpl;
 import sesson9.DTO.Student;
-import sesson9.DTO.StudentList;
 
+import java.util.List;
 import java.util.Objects;
 
 public class StudentServiceImpl implements StudentService {
@@ -12,7 +12,7 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public StudentList findAll() {
+    public List<Student> findAll(){
         return repository.findAll();
     }
 
@@ -20,7 +20,7 @@ public class StudentServiceImpl implements StudentService {
     public void addStudent(Student student) {
         int flag = 1;
         for (int i = 0; i < repository.sizeOfStudentList(); i++){
-            if(Objects.equals(repository.findStuden(i).getName(), student.getName())) {
+            if(Objects.equals(repository.findStudent(i).getName(), student.getName())) {
                 System.out.println("Students already exist!");
                 flag = 0;
             }
@@ -34,7 +34,7 @@ public class StudentServiceImpl implements StudentService {
     public void updateStudent(int id) {
         int flag = 0;
         for (int i = 0; i < repository.sizeOfStudentList(); i++){
-            if(repository.findStuden(i).getId() == id) {
+            if(repository.findStudent(i).getId() == id) {
                 repository.updateStudent(i);
                 flag = 1;
             }
@@ -48,7 +48,7 @@ public class StudentServiceImpl implements StudentService {
     public void removeStudent(int id) {
         int flag = 0;
         for (int i = 0; i < repository.sizeOfStudentList(); i++){
-            if(repository.findStuden(i).getId() == id) {
+            if(repository.findStudent(i).getId() == id) {
                 repository.removeStudent(i);
                 flag = 1;
             }

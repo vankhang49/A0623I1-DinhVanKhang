@@ -1,11 +1,12 @@
 package sesson9.BO;
 
 import sesson9.DTO.Student;
-import sesson9.DTO.StudentList;
+
+import java.util.List;
 
 public interface StudentService{
     /* CRUD */
-    StudentList findAll();
+    List<Student> findAll();
 
     void addStudent(Student student);
     void removeStudent(int id);

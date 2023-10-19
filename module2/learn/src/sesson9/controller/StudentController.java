@@ -3,8 +3,8 @@ package sesson9.controller;
 import sesson9.BO.StudentService;
 import sesson9.BO.StudentServiceImpl;
 import sesson9.DTO.Student;
-import sesson9.DTO.StudentList;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class StudentController {
@@ -14,10 +14,10 @@ public class StudentController {
         Scanner scanner = new Scanner(System.in);
         switch (select){
             case 1: //list
-                StudentList studentList = service.findAll();
+                List<Student> studentList = service.findAll();
                 System.out.println(studentList.size());
-                for(int i = 0; i < studentList.size(); i++){
-                    System.out.println(studentList.get(i));
+                for (Student value : studentList) {
+                    System.out.println(value);
                 }
                 break;
             case 2: //add new
