@@ -16,7 +16,7 @@ public class StackTest {
             int select = sc.nextInt();
             switch (select){
                 case 1:
-                    LinkedList<Integer> integerList= new LinkedList<>();
+                    LinkedList<Integer> integerList = new LinkedList<>();
                     System.out.println("Enter the number of elements you want to import: ");
                     int length = sc.nextInt();
                     for(int i = 0; i < length; i++){
