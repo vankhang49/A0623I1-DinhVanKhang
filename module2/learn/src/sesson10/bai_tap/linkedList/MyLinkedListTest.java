@@ -8,7 +8,7 @@ public class MyLinkedListTest {
         linkedList.addFirst(13);
         linkedList.printList();
         System.out.println("\n");
-        linkedList.add(3,10);
+        linkedList.add(2,10);
         linkedList.add(4,9);
         linkedList.printList();
         System.out.println("\n");
