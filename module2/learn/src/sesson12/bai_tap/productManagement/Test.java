@@ -59,7 +59,7 @@ public class Test {
                     String searchName = sc.nextLine();
                     Product productFind = productManager.searchProduct(searchName);
                     if (productFind != null){
-                        System.out.println("Your product: " + productFind.toString());
+                        System.out.println("Your product: " + productFind);
                     } else {
                         System.out.println("No product found!");
                     }
