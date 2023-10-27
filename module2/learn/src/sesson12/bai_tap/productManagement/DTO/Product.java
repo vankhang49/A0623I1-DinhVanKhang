@@ -1,4 +1,4 @@
-package sesson12.bai_tap.productManagement;
+package sesson12.bai_tap.productManagement.DTO;
 
 public class Product implements Comparable<Product> {
     private String name;
