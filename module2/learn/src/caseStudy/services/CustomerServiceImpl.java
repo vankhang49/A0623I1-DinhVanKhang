@@ -26,14 +26,26 @@ public class CustomerServiceImpl implements CustomerService{
             String line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                customersList.add(new Customer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5],
-                        arr[6], arr[7], arr[8]));
+                String id = arr[0];
+                String name = arr[1];
+                String born = arr[2];
+                String gender = arr[3];
+                String identifier = arr[4];
+                String phoneNumber = arr[5];
+                String email = arr[6];
+                String typeOfGuest = arr[7];
+                String address = arr[8];
+                customersList.add(new Customer(id, name, born, gender, identifier, phoneNumber,
+                        email, typeOfGuest, address));
             }
             br.close();
         }
-        catch (Exception e) {
+        catch (FileNotFoundException e){
+            System.out.println("File not found " + e.getMessage());
+        }
+        catch (IOException e) {
             // TH file không tồn tại hoặc nội dung file có lỗi thì sẽ hiển thị thông báo lỗi.
-            System.err.println("The file does not exist or the content has errors!");
+            System.err.println("Read write error");
         }
         return customersList;
     }

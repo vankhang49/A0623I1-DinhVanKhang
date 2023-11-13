@@ -23,14 +23,27 @@ public class EmployeeServiceImpl implements EmployeeService {
             String line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                employeesList.add(new Employee(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5],
-                        arr[6], arr[7], arr[8], Integer.parseInt(arr[9])));
+                String id = arr[0];
+                String name = arr[1];
+                String born = arr[2];
+                String gender = arr[3];
+                String identifier = arr[4];
+                String phoneNumber = arr[5];
+                String email = arr[6];
+                String level = arr[7];
+                String position = arr[8];
+                int salary = Integer.parseInt(arr[9]);
+                employeesList.add(new Employee(id, name, born, gender, identifier, phoneNumber,
+                        email, level, position, salary));
             }
             br.close();
         }
-        catch (Exception e) {
+        catch (FileNotFoundException e){
+            System.out.println("File not found " + e.getMessage());
+        }
+        catch (IOException e) {
             // TH file không tồn tại hoặc nội dung file có lỗi thì sẽ hiển thị thông báo lỗi.
-            System.err.println("The file does not exist or the content has errors!");
+            System.err.println("Read write error");
         }
         return employeesList;
     }

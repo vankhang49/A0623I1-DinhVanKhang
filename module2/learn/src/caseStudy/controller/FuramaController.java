@@ -27,7 +27,7 @@ public class FuramaController {
                 System.out.println("5. Promotion Management");
                 System.out.println("6. Exit");
                 System.out.print("Please input number: ");
-                select = scanner.nextInt();
+                select = Integer.parseInt(scanner.nextLine());
                 switch (select){
                     case 1: // Call Employee Menu
                         displayEmployeeMenu();
@@ -50,7 +50,10 @@ public class FuramaController {
             }
             catch (InputMismatchException e){
                 System.out.println("Please enter a valid integer!");
-                scanner.nextLine();
+//                scanner.nextLine();
+            }
+            catch (NumberFormatException e){
+                System.out.println("Not a number");
             }
         }while (true);
     }

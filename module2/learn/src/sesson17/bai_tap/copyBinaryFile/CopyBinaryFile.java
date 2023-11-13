@@ -1,6 +1,8 @@
 package sesson17.bai_tap.copyBinaryFile;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class CopyBinaryFile {
@@ -21,7 +23,7 @@ public class CopyBinaryFile {
             System.out.println("File not found");
             System.out.println(e.getMessage());
         } catch (IOException e) {
-            System.out.printf("Can't copy that file");
+            System.out.print("Can't copy that file");
             System.out.printf(e.getMessage());
         }
 
@@ -30,8 +32,8 @@ public class CopyBinaryFile {
         InputStream ip = null;
         OutputStream op = null;
         try {
-            ip = new FileInputStream(source);
-            op = new FileOutputStream(dest);
+            ip = Files.newInputStream(source.toPath());
+            op = Files.newOutputStream(dest.toPath());
             byte[] buffer = new byte[1024];
             int length;
             while ((length = ip.read(buffer)) > 0) {
@@ -47,7 +49,7 @@ public class CopyBinaryFile {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Enter source file:");
@@ -55,5 +57,6 @@ public class CopyBinaryFile {
         System.out.print("Enter destination file:");
         String targetPath = in.nextLine();
         readFile(sourcePath, targetPath);
+        System.out.println("Capacity of source file: " + Files.size(Paths.get(sourcePath)) + " byte");
     }
 }

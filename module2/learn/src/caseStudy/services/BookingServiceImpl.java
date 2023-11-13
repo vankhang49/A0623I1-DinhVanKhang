@@ -20,20 +20,26 @@ public class BookingServiceImpl implements BookingService{
         try {
             File file = new File(SRC);
             if (!file.exists()){
-                System.out.println("File not found");
+                throw new FileNotFoundException();
             }
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                bookingList.add(new Booking(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]));
+                String idBooking = arr[0];
+                String beginDate = arr[1];
+                String endDate = arr[2];
+                String idCustomer = arr[3];
+                String serviceName = arr[4];
+                String serviceType = arr[5];
+                bookingList.add(new Booking(idBooking, beginDate, endDate, idCustomer, serviceName, serviceType));
             }
             br.close();
         }
-//        catch (FileNotFoundException e) {
-//            // TH file không tồn tại hoặc nội dung file có lỗi thì sẽ hiển thị thông báo lỗi.
-//            System.err.println("The file does not exist or the content has errors!");
-//        }
+        catch (FileNotFoundException e) {
+            // TH file không tồn tại hoặc nội dung file có lỗi thì sẽ hiển thị thông báo lỗi.
+            System.err.println("The file does not exist or the content has errors!");
+        }
         catch (Exception e) {
             System.err.println("There is some error!");
         }

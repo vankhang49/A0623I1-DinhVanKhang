@@ -25,8 +25,12 @@ public class ContractServiceImpl implements ContractService{
             String line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                contractList.add(new Contract(Integer.parseInt(arr[0]), arr[1], Double.parseDouble(arr[2]),
-                        Double.parseDouble(arr[3]), arr[4]));
+                int contractNumber = Integer.parseInt(arr[0]);
+                String idBooking = arr[1];
+                double deposit = Double.parseDouble(arr[2]);
+                double totalPayment = Double.parseDouble(arr[3]);
+                String idCustomer = arr[4];
+                contractList.add(new Contract(contractNumber, idBooking, deposit, totalPayment, idCustomer));
             }
             br.close();
         }

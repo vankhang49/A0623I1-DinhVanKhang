@@ -8,9 +8,9 @@ import java.util.*;
 public class FacilityServiceImpl implements FacilityService{
     static Scanner sc = new Scanner(System.in);
     private static final Map<Facility, Integer> facilityIntegerMap;
-    private static final String villaSrc = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\villa.csv";
-    private static final String houseSrc = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\house.csv";
-    private static final String roomSrc = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\room.csv";
+    private static final String VILLA_SRC = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\villa.csv";
+    private static final String HOUSE_SRC = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\house.csv";
+    private static final String ROOM_SRC = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\room.csv";
 
     static {
         facilityIntegerMap = createFacilitiesData();
@@ -19,46 +19,66 @@ public class FacilityServiceImpl implements FacilityService{
     private static Map<Facility, Integer> createFacilitiesData()  {
         Map<Facility, Integer> facilityList = new LinkedHashMap<>();
         try {
-            File file1 = new File(villaSrc);
-            File file2 = new File(houseSrc);
-            File file3 = new File(roomSrc);
+            File file1 = new File(VILLA_SRC);
+            File file2 = new File(HOUSE_SRC);
+            File file3 = new File(ROOM_SRC);
             if (!file1.exists()){
-//                throw new FileNotFoundException();
-                System.out.println("File not found");
+                throw new FileNotFoundException();
             }
             BufferedReader br = new BufferedReader(new FileReader(file1));
             String line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                facilityList.put(new Villa(arr[0], Double.parseDouble(arr[1]), Double.parseDouble(arr[2]),
-                        Integer.parseInt(arr[3]), arr[4], arr[5] , Double.parseDouble(arr[6]),
-                        Integer.parseInt(arr[7])), Integer.parseInt(arr[8]));
+                String name = arr[0];
+                double usableArea = Double.parseDouble(arr[1]);
+                double rentalFee = Double.parseDouble(arr[2]);
+                int numOfPeople = Integer.parseInt(arr[3]);
+                String typeOfRental = arr[4];
+                String roomStandards = arr[5];
+                double swimmingPoolArea = Double.parseDouble(arr[6]);
+                int numberOfFloors = Integer.parseInt(arr[7]);
+                int turn = Integer.parseInt(arr[8]);
+                facilityList.put(new Villa(name, usableArea, rentalFee, numOfPeople, typeOfRental, roomStandards,
+                        swimmingPoolArea, numberOfFloors), turn);
             }
             br.close();
 
             if (!file2.exists()){
-//                throw new FileNotFoundException();
-                System.out.println("File not found");
+                throw new FileNotFoundException();
             }
             br = new BufferedReader(new FileReader(file2));
             line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                facilityList.put(new House(arr[0], Double.parseDouble(arr[1]), Double.parseDouble(arr[2]),
-                        Integer.parseInt(arr[3]), arr[4], arr[5] , Integer.parseInt(arr[6])), Integer.parseInt(arr[8]));
+                String name = arr[0];
+                double usableArea = Double.parseDouble(arr[1]);
+                double rentalFee = Double.parseDouble(arr[2]);
+                int numOfPeople = Integer.parseInt(arr[3]);
+                String typeOfRental = arr[4];
+                String roomStandards = arr[5];
+                int numberOfFloors = Integer.parseInt(arr[6]);
+                int turn = Integer.parseInt(arr[7]);
+                facilityList.put(new House(name, usableArea, rentalFee, numOfPeople, typeOfRental, roomStandards,
+                        numberOfFloors), turn);
             }
             br.close();
 
             if (!file3.exists()){
-//                throw new FileNotFoundException();
-                System.out.println("File not found");
+                throw new FileNotFoundException();
             }
             br = new BufferedReader(new FileReader(file3));
             line = "";
             while ((line = br.readLine()) != null){
                 String[] arr = line.split(",");
-                facilityList.put(new Room(arr[0], Double.parseDouble(arr[1]), Double.parseDouble(arr[2]),
-                        Integer.parseInt(arr[3]), arr[4], arr[5]), Integer.parseInt(arr[8]));
+                String name = arr[0];
+                double usableArea = Double.parseDouble(arr[1]);
+                double rentalFee = Double.parseDouble(arr[2]);
+                int numOfPeople = Integer.parseInt(arr[3]);
+                String typeOfRental = arr[4];
+                String freeServiceIncluded = arr[5];
+                int turn = Integer.parseInt(arr[6]);
+                facilityList.put(new Room(name, usableArea, rentalFee, numOfPeople, typeOfRental, freeServiceIncluded),
+                        turn);
             }
             br.close();
         }
@@ -75,11 +95,11 @@ public class FacilityServiceImpl implements FacilityService{
         try {
             String src;
             if (f instanceof Villa) {
-                src = villaSrc;
+                src = VILLA_SRC;
             } else if (f instanceof House) {
-                src = houseSrc;
+                src = HOUSE_SRC;
             } else if (f instanceof Room) {
-                src = roomSrc;
+                src = ROOM_SRC;
             } else {
                 throw new IllegalArgumentException("Unsupported facility type");
             }
@@ -121,11 +141,11 @@ public class FacilityServiceImpl implements FacilityService{
         try {
             String src = null;
             if (Objects.equals(serviceName.split("-")[0], "SVVL")) {
-                src = villaSrc;
+                src = VILLA_SRC;
             } else if (Objects.equals(serviceName.split("-")[0], "SVHO")) {
-                src = houseSrc;
+                src = HOUSE_SRC;
             } else if (Objects.equals(serviceName.split("-")[0], "SVRO")) {
-                src = roomSrc;
+                src = ROOM_SRC;
             }
             File inputFile = new File(src);
             File tempFile = new File("temp.csv");
