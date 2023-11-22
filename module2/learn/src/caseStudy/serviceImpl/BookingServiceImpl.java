@@ -1,12 +1,15 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Booking;
 import caseStudy.models.Facility;
+import caseStudy.services.BookingService;
+import caseStudy.services.CustomerService;
+import caseStudy.services.FacilityService;
 
 import java.io.*;
 import java.util.*;
 
-public class BookingServiceImpl implements BookingService{
+public class BookingServiceImpl implements BookingService {
     static Scanner sc = new Scanner(System.in);
     private static final Set<Booking> listBooking;
     private static final FacilityService facilityService = new FacilityServiceImpl();
@@ -58,8 +61,12 @@ public class BookingServiceImpl implements BookingService{
             bufferedWriter.write("\n" + line);
             bufferedWriter.close();
         }
-        catch (Exception ex) {
-            System.err.println("The source file does not exist!");
+        catch (FileNotFoundException e) {
+            // TH file không tồn tại hoặc nội dung file có lỗi thì sẽ hiển thị thông báo lỗi.
+            System.err.println("The file does not exist or the content has errors!");
+        }
+        catch (Exception e) {
+            System.err.println("There is some error!");
         }
     }
 

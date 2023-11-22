@@ -2,6 +2,7 @@ package caseStudy.controller;
 
 import caseStudy.models.Customer;
 import caseStudy.models.Employee;
+import caseStudy.serviceImpl.*;
 import caseStudy.services.*;
 
 import java.util.InputMismatchException;
@@ -60,7 +61,9 @@ public class FuramaController {
 
     public static void displayEmployeeMenu(){
         int select;
+        boolean check = false;
         do{
+            check = true;
             try {
                 System.out.println("-----Employee Menu--------");
                 System.out.println("1. Display list employees");
@@ -105,19 +108,21 @@ public class FuramaController {
                         employeeService.editEmployee(idEdit);
                         break;
                     case 4: // Return main menu
-                        displayMainMenu();
+                        check = false;
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Please enter a valid integer!");
                 scanner.nextLine();
             }
-        }while (true);
+        }while (check);
     }
 
     public static void displayCustomerMenu(){
+        boolean check = false;
         do{
             try {
+                check = true;
                 System.out.println("-----Customer Menu--------");
                 System.out.println("1. Display list customers");
                 System.out.println("2. Add new customer");
@@ -158,7 +163,7 @@ public class FuramaController {
                         customerService.editCustomer(idEdit);
                         break;
                     case 4: // Return main menu
-                        displayMainMenu();
+                        check = false;
                 }
             }
             catch (NumberFormatException e){
@@ -168,12 +173,14 @@ public class FuramaController {
                 System.out.println("Please enter a valid integer!");
                 scanner.nextLine();
             }
-        }while (true);
+        }while (check);
     }
 
     public static void displayFacilityMenu(){
+        boolean check = false;
         do{
             try {
+                check = true;
                 System.out.println("-----Facility Menu--------");
                 System.out.println("1. Display list Facilities");
                 System.out.println("2. Add new Facility");
@@ -193,19 +200,21 @@ public class FuramaController {
                         facilityService.displayFacilityMaintenance();
                         break;
                     case 4: // Return main menu
-                        displayMainMenu();
+                        check = false;
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Please enter a valid integer!");
                 scanner.nextLine();
             }
-        }while (true);
+        }while (check);
     }
 
     public static void displayBookingMenu(){
+        boolean check = false;
         do{
             try {
+                check = true;
                 System.out.println("-----Booking Menu--------");
                 System.out.println("1. Add new booking");
                 System.out.println("2. Display list booking");
@@ -236,18 +245,20 @@ public class FuramaController {
                         contractService.editContract(idContract);
                         break;
                     case 6: // Return main menu
-                        displayMainMenu();
+                        check = false;
                 }
             }
             catch (InputMismatchException e){
                 System.out.println("Please enter a valid integer!");
                 scanner.nextLine();
             }
-        }while (true);
+        }while (check);
     }
     public static void displayPromotionMenu(){
+        boolean check = false;
         do{
             try {
+                check = true;
                 System.out.println("-----Promotion Menu--------");
                 System.out.println("1. Display list customers use service");
                 System.out.println("2. Display list customers get voucher");
@@ -269,7 +280,7 @@ public class FuramaController {
                 System.out.println("Please enter a valid integer!");
                 scanner.nextLine();
             }
-        }while (true);
+        }while (check);
     }
 
     public static void main(String[] args) {

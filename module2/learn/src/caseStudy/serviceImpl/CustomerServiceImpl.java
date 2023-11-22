@@ -1,6 +1,7 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Customer;
+import caseStudy.services.CustomerService;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
     static Scanner sc = new Scanner(System.in);
     private static final List<Customer> customerList;
     private static final String src = "H:\\codegym\\module2\\learn\\src\\caseStudy\\data\\customer.csv";
@@ -71,7 +72,12 @@ public class CustomerServiceImpl implements CustomerService{
         try {
             File inputFile = new File(src);
             File tempFile = new File("temp.csv");
-
+            if (!inputFile.exists()){
+                System.out.println("File not found!");
+            }
+            if (tempFile.exists()){
+                System.out.println("Temp file exist!");
+            }
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
@@ -106,7 +112,6 @@ public class CustomerServiceImpl implements CustomerService{
             System.out.println(cus.inforPerson() + "\n");
         }
     }
-
     @Override
     public void addNew(Customer c) {
         try{

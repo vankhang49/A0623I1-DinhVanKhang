@@ -1,7 +1,7 @@
 package sesson12.bai_tap.productManagement.controller;
 
 import sesson12.bai_tap.productManagement.BO.ProductService;
-import sesson12.bai_tap.productManagement.BO.ProductServiceImp;
+import sesson12.bai_tap.productManagement.BOImpl.ProductServiceImp;
 import sesson12.bai_tap.productManagement.DTO.Product;
 
 import java.util.Scanner;

@@ -1,11 +1,12 @@
-package sesson12.bai_tap.productManagement.BO;
+package sesson12.bai_tap.productManagement.BOImpl;
 
+import sesson12.bai_tap.productManagement.BO.ProductService;
 import sesson12.bai_tap.productManagement.DAO.ProductRepository;
-import sesson12.bai_tap.productManagement.DAO.ProductRepositoryImp;
+import sesson12.bai_tap.productManagement.DAOImpl.ProductRepositoryImp;
 import sesson12.bai_tap.productManagement.DTO.Product;
 
-public class ProductServiceImp implements ProductService{
-    private final ProductRepository repository = new ProductRepositoryImp();
+public class ProductServiceImp implements ProductService {
+    private static final ProductRepository repository = new ProductRepositoryImp();
 
     @Override
     public void addProduct(Product product) {

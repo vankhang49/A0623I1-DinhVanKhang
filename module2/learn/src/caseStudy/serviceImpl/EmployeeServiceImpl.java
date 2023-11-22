@@ -1,6 +1,7 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Employee;
+import caseStudy.services.EmployeeService;
 
 import java.io.*;
 import java.util.*;
@@ -137,7 +138,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             System.out.println(e.inforPerson() + "\n");
         }
     }
-
     @Override
     public void addNew(Employee e) {
         try{
@@ -211,7 +211,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                             break;
                         case "salary":
                             System.out.println("Enter a new salary");
-                            int salary = sc.nextInt();
+                            int salary = Integer.parseInt(sc.nextLine());
                             emp.setSalary(salary);
                             break;
                         default:

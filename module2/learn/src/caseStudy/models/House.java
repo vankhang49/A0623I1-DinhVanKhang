@@ -4,9 +4,9 @@ public class House extends Facility{
     private String roomStandards;
     private int numberOfFloors;
 
-    public House(String serviceName, double usableArea, double rentalFee, int numOfPeople, String typeOfRental
+    public House(String idService,String serviceName, double usableArea, double rentalFee, int numOfPeople, String typeOfRental
             , String roomStandards, int numberOfFloors) {
-        super(serviceName, usableArea, rentalFee, numOfPeople, typeOfRental);
+        super(idService,serviceName, usableArea, rentalFee, numOfPeople, typeOfRental);
         this.roomStandards = roomStandards;
         this.numberOfFloors = numberOfFloors;
     }
@@ -29,7 +29,8 @@ public class House extends Facility{
 
     @Override
     public String infoOfService() {
-        return "Service's name: " + getServiceName() + ",\n" +
+        return "ID service: " + getIdService() + ",\n" +
+                "Service's name: " + getServiceName() + ",\n" +
                 "Usable Area: " + getUsableArea() + "m²,\n" +
                 "Rental fee: " + getRentalFee() + "$,\n" +
                 "Number of people: " + getNumOfPeople() + ",\n" +

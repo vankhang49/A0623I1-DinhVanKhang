@@ -1,7 +1,9 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Booking;
 import caseStudy.models.Promotion;
+import caseStudy.services.BookingService;
+import caseStudy.services.PromotionService;
 
 import java.util.*;
 

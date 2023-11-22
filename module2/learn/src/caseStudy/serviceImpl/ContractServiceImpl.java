@@ -1,12 +1,14 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Booking;
 import caseStudy.models.Contract;
+import caseStudy.services.BookingService;
+import caseStudy.services.ContractService;
 
 import java.io.*;
 import java.util.*;
 
-public class ContractServiceImpl implements ContractService{
+public class ContractServiceImpl implements ContractService {
     static Scanner sc = new Scanner(System.in);
     private static final Queue<Contract> contractsList;
     private static final BookingService bookingService = new BookingServiceImpl();

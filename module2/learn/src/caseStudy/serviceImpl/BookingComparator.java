@@ -1,4 +1,4 @@
-package caseStudy.services;
+package caseStudy.serviceImpl;
 
 import caseStudy.models.Booking;
 
@@ -13,13 +13,19 @@ public class BookingComparator implements Comparator<Booking> {
     @Override
     public int compare(Booking o1, Booking o2) {
         try {
-            Date date1 = dateFormat.parse(o1.getBeginDate());
-            Date date2 = dateFormat.parse(o2.getBeginDate());
+            Date bDate1 = dateFormat.parse(o1.getBeginDate());
+            Date eDate1 = dateFormat.parse(o1.getEndDate());
+            Date bDate2 = dateFormat.parse(o2.getBeginDate());
+            Date eDate2 = dateFormat.parse(o2.getEndDate());
 
-            return date1.compareTo(date2);
+            if(bDate1.compareTo(bDate2) == 0){
+                return eDate1.compareTo(eDate2);
+            };
+            return bDate1.compareTo(bDate2);
         } catch (ParseException e) {
             e.printStackTrace();
             return 0;
         }
     }
+
 }

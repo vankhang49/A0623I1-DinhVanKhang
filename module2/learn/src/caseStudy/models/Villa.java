@@ -5,9 +5,9 @@ public class Villa extends Facility{
     private double swimmingPoolArea;
     private int numberOfFloors;
 
-    public Villa(String serviceName, double usableArea, double rentalFee, int numOfPeople, String typeOfRental,
+    public Villa(String idService,String serviceName, double usableArea, double rentalFee, int numOfPeople, String typeOfRental,
                  String roomStandards, double swimmingPoolArea, int numberOfFloors) {
-        super(serviceName, usableArea, rentalFee, numOfPeople, typeOfRental);
+        super(idService, serviceName, usableArea, rentalFee, numOfPeople, typeOfRental);
         this.roomStandards = roomStandards;
         this.swimmingPoolArea = swimmingPoolArea;
         this.numberOfFloors = numberOfFloors;
@@ -39,7 +39,8 @@ public class Villa extends Facility{
 
     @Override
     public String infoOfService() {
-        return "Service's name: " + getServiceName() + ",\n" +
+        return "ID service: " + getIdService() + ",\n" +
+                "Service's name: " + getServiceName() + ",\n" +
                 "Usable Area: " + getUsableArea() + "m²,\n" +
                 "Rental fee: " + getRentalFee() + "$,\n" +
                 "Number of people: " + getNumOfPeople() + ",\n" +
