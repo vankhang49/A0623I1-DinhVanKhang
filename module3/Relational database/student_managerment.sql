@@ -1,3 +1,4 @@
+CREATE DATABASE `student_management`;
 CREATE TABLE `student-management`.`student` (
   `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
