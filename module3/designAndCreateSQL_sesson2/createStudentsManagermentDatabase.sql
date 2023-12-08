@@ -20,16 +20,16 @@ foreign key(classId) references classes(classId)
 create table subjects(
 subId int not null auto_increment,
 subName varchar(30) not null,
-credit tinyint not null default(1) check(credit >=1),
-statuses bit default(1),
+credit tinyint not null default 1 check(credit >=1),
+statuses bit default 1,
 primary key(subId)
 );
 create table marks(
 markId int not null auto_increment,
-subId int not null unique,
-stuId int not null unique,
-mark float default(0) check(mark between 0 and 100),
-examTimes tinyint default(1),
+subId int not null,
+stuId int not null,
+mark float default 0 check(mark between 0 and 100),
+examTimes tinyint default 1,
 primary key(markId),
 foreign key(subId) references subjects(subId),
 foreign key(stuId) references students(stuId)
