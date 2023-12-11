@@ -4,14 +4,12 @@ use saleManagerment;
 create table customers(
 cusId int not null auto_increment unique,
 cusName varchar(30),
-cusAge datetime,
+cusAge tinyint,
 primary key(cusId)
 );
 create table oder(
 oderId int not null auto_increment unique,
 oderDate datetime,
-proName varchar(50),
-amount int check(amount > 1),
 oderTotalPrice double,
 cusId int,
 primary key(oderId),
@@ -26,7 +24,7 @@ primary key(proId)
 create table oderDetail(
 oderId int,
 proId int,
-odQTY varchar(50),
+odQTY int,
 primary key(oderId, proId),
 foreign key(oderId) references oder(oderId),
 foreign key(proId) references product(proId)
